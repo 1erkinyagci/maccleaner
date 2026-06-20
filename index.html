@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MacCleaner — Clean your Mac in under 60 seconds</title>
+    <meta
+      name="description"
+      content="A fast, safe, and effortless Mac cleanup app for everyday users. Find cache files, old downloads, app leftovers, large files, and hidden clutter — then clean with confidence."
+    />
+    <link rel="canonical" href="https://1erkinyagci.github.io/maccleaner/" />
+    <meta property="og:title" content="MacCleaner — Clean your Mac in under 60 seconds" />
+    <meta
+      property="og:description"
+      content="Fast, safe, and effortless Mac cleanup for everyday users. Local-first. No automatic deletion."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://1erkinyagci.github.io/maccleaner/" />
+
+    <!-- GSC_VERIFICATION -->
+
+    <!-- GA4_TAG -->
+
+    <style>
+      :root {
+        --bg: #15141d;
+        --card: rgba(255, 255, 255, 0.05);
+        --border: rgba(255, 255, 255, 0.1);
+        --text: #e7e4ef;
+        --muted: rgba(231, 228, 239, 0.55);
+        --mint: #a8e0c8;
+        --lav: #b9aef0;
+        --peach: #f0b59f;
+        --amber: #f0d49f;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        background: linear-gradient(160deg, #232132 0%, #1a1925 55%, #15141d 100%);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      a { color: inherit; text-decoration: none; }
+      .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+      .glass {
+        background: var(--card);
+        border: 1px solid var(--border);
+        backdrop-filter: blur(24px) saturate(1.4);
+        -webkit-backdrop-filter: blur(24px) saturate(1.4);
+        box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.14), 0 24px 60px -28px rgba(0, 0, 0, 0.5);
+      }
+      .blob {
+        position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.4; z-index: 0;
+      }
+
+      nav {
+        position: sticky; top: 0; z-index: 50;
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 14px 24px; max-width: 1040px; margin: 0 auto;
+        backdrop-filter: blur(16px);
+      }
+      .brand { display: flex; align-items: center; gap: 10px; font-weight: 500; }
+      .brand .mark {
+        width: 32px; height: 32px; border-radius: 9px; display: grid; place-items: center;
+        background: rgba(185, 174, 240, 0.18); color: var(--lav);
+      }
+      .brand small { display: block; font-size: 11px; color: var(--muted); font-weight: 400; }
+      .btn {
+        display: inline-block; border-radius: 14px; padding: 11px 20px; font-size: 14px; font-weight: 500;
+        cursor: pointer; border: none; transition: transform 0.15s ease, opacity 0.15s ease;
+      }
+      .btn:hover { transform: translateY(-1px); }
+      .btn-primary { background: linear-gradient(150deg, #cfc6f5, #b3a7ef); color: #241f33; }
+      .btn-ghost { border: 1px solid var(--border); color: var(--text); background: transparent; }
+
+      header.hero { position: relative; text-align: center; padding: 70px 0 90px; }
+      .pill {
+        display: inline-block; border: 1px solid var(--border); background: rgba(255,255,255,0.05);
+        border-radius: 999px; padding: 7px 16px; font-size: 13px; color: var(--muted); margin-bottom: 26px;
+      }
+      h1 {
+        font-size: 56px; line-height: 1.08; letter-spacing: -0.02em; font-weight: 600; max-width: 760px; margin: 0 auto;
+        background: linear-gradient(120deg, #ffffff, #d8e8df 45%, #f3dcd0 75%, #e6def7);
+        -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      }
+      .sub { font-size: 18px; color: var(--muted); max-width: 600px; margin: 22px auto 34px; }
+      .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+      .trust-row {
+        display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 40px;
+      }
+      .trust-row span {
+        font-size: 13px; color: var(--muted); border: 1px solid var(--border);
+        border-radius: 999px; padding: 7px 14px; display: flex; align-items: center; gap: 8px;
+      }
+      .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--mint); }
+
+      section { padding: 64px 0; position: relative; }
+      h2 { font-size: 34px; font-weight: 600; letter-spacing: -0.01em; text-align: center; }
+      .lead { text-align: center; color: var(--muted); max-width: 560px; margin: 14px auto 0; }
+
+      .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; }
+      .step { border-radius: 22px; padding: 26px; }
+      .step .n { font-size: 13px; color: var(--lav); font-weight: 500; }
+      .step h3 { font-size: 18px; font-weight: 500; margin: 10px 0 6px; }
+      .step p { font-size: 14px; color: var(--muted); }
+
+      .cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 40px; }
+      .cat { border-radius: 18px; padding: 20px; }
+      .cat .swatch { width: 30px; height: 30px; border-radius: 9px; margin-bottom: 12px; }
+      .cat h4 { font-size: 15px; font-weight: 500; }
+      .cat p { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+      .safety { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+      .safety .item { border-radius: 18px; padding: 22px; }
+      .safety h4 { font-size: 16px; font-weight: 500; margin-bottom: 6px; }
+      .safety p { font-size: 14px; color: var(--muted); }
+
+      .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; max-width: 760px; margin-left: auto; margin-right: auto; }
+      .plan { border-radius: 22px; padding: 28px; }
+      .plan.pro { outline: 2px solid rgba(179,167,239,0.5); outline-offset: -1px; }
+      .plan h3 { font-size: 20px; font-weight: 500; }
+      .plan ul { list-style: none; margin-top: 16px; }
+      .plan li { font-size: 14px; color: var(--text); padding: 6px 0; display: flex; gap: 8px; }
+      .plan li::before { content: "✓"; color: var(--mint); }
+
+      .prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+      .price { border-radius: 22px; padding: 26px; position: relative; }
+      .price .badge {
+        position: absolute; top: 22px; right: 22px; font-size: 11px; font-weight: 500;
+        color: var(--amber); background: rgba(240,212,159,0.18); border-radius: 999px; padding: 3px 10px;
+      }
+      .price .amt { font-size: 30px; font-weight: 600; margin: 8px 0 2px; }
+      .price .cad { font-size: 13px; color: var(--muted); }
+
+      details { border-bottom: 1px solid var(--border); padding: 18px 0; }
+      summary { cursor: pointer; font-size: 16px; font-weight: 500; list-style: none; display: flex; justify-content: space-between; }
+      summary::-webkit-details-marker { display: none; }
+      summary::after { content: "+"; color: var(--muted); }
+      details[open] summary::after { content: "−"; }
+      details p { color: var(--muted); margin-top: 12px; font-size: 14px; }
+
+      .final { text-align: center; border-radius: 30px; padding: 60px 24px; margin: 30px 0 70px; position: relative; overflow: hidden; }
+      footer { border-top: 1px solid var(--border); padding: 30px 0; color: var(--muted); font-size: 13px; }
+      .foot-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+      @media (max-width: 860px) {
+        h1 { font-size: 40px; }
+        .steps, .cats, .safety, .compare, .prices { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="brand" href="#top">
+        <span class="mark">✦</span>
+        <span>MacCleaner<small>Local-first Mac cleanup</small></span>
+      </a>
+      <a class="btn btn-primary" href="#download">Download for Mac</a>
+    </nav>
+
+    <div class="wrap">
+      <header class="hero">
+        <span class="blob" style="width: 360px; height: 360px; top: -40px; left: 4%; background: #a8e0c8"></span>
+        <span class="blob" style="width: 320px; height: 320px; top: 10px; right: 6%; background: #b9aef0"></span>
+        <span class="blob" style="width: 280px; height: 280px; bottom: -40px; left: 38%; background: #f0b59f"></span>
+        <div style="position: relative; z-index: 1">
+          <span class="pill">Runs locally · Nothing is deleted automatically</span>
+          <h1>Clean your Mac in under 60 seconds.</h1>
+          <p class="sub">
+            A fast, safe, and effortless Mac cleanup app for everyday users. Find cache files, old
+            downloads, app leftovers, large files, and hidden clutter — then clean with confidence.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#download">Download for Mac</a>
+            <a class="btn btn-ghost" href="#how">See how it works</a>
+          </div>
+          <div class="trust-row">
+            <span><i class="dot"></i>Apple-notarized</span>
+            <span><i class="dot"></i>Local-first scanning</span>
+            <span><i class="dot"></i>No automatic deletion</span>
+            <span><i class="dot"></i>No ads or tracking</span>
+          </div>
+        </div>
+      </header>
+
+      <section id="how">
+        <h2>Scan → Review → Clean</h2>
+        <p class="lead">Three simple steps. You stay in control the whole time.</p>
+        <div class="steps">
+          <div class="glass step"><p class="n">01</p><h3>Scan</h3><p>One click scans cache, logs, downloads, leftovers, and clutter — locally on your Mac.</p></div>
+          <div class="glass step"><p class="n">02</p><h3>Review</h3><p>See exactly what was found, grouped by safety. Nothing is selected for you that shouldn't be.</p></div>
+          <div class="glass step"><p class="n">03</p><h3>Clean</h3><p>Clean with confidence. Files move to Trash by default, so you can restore anytime.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>What you can clean</h2>
+        <div class="cats">
+          <div class="glass cat"><div class="swatch" style="background:#b9aef0"></div><h4>Cache &amp; Logs</h4><p>Temporary files apps can recreate.</p></div>
+          <div class="glass cat"><div class="swatch" style="background:#a8e0c8"></div><h4>Trash &amp; Downloads</h4><p>Old installers, archives, downloads.</p></div>
+          <div class="glass cat"><div class="swatch" style="background:#9fc7f0"></div><h4>App Leftovers</h4><p>Files left by removed apps.</p></div>
+          <div class="glass cat"><div class="swatch" style="background:#f0d49f"></div><h4>Large Files</h4><p>Big files you may have forgotten.</p></div>
+          <div class="glass cat"><div class="swatch" style="background:#f0b59f"></div><h4>Duplicates</h4><p>Identical copies, reviewed first.</p></div>
+          <div class="glass cat"><div class="swatch" style="background:#c4b5f5"></div><h4>Old Backups</h4><p>Old iPhone/iPad local backups.</p></div>
+          <div class="glass cat"><div class="swatch" style="background:#f3b6c4"></div><h4>iOS Simulators</h4><p>Xcode simulator data.</p></div>
+          <div class="glass cat"><div class="swatch" style="background:#8fd4c8"></div><h4>Developer Junk</h4><p>Build cache &amp; artifacts.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Why it's safe</h2>
+        <div class="safety">
+          <div class="glass item"><h4>Nothing is deleted automatically</h4><p>MacCleaner only cleans what you select and confirm. Always.</p></div>
+          <div class="glass item"><h4>Moved to Trash by default</h4><p>Recover anything from Finder. Permanent delete is opt-in only.</p></div>
+          <div class="glass item"><h4>Local-first scanning</h4><p>Your files are scanned on your Mac. File names and paths never leave it.</p></div>
+          <div class="glass item"><h4>No scare tactics</h4><p>No fake "infected" warnings, no RAM-boost myths. Just real free space.</p></div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <h2>Free vs Pro</h2>
+        <p class="lead">Real value for free. Upgrade only when you need more.</p>
+        <div class="compare">
+          <div class="glass plan"><h3>Free</h3><ul><li>Unlimited scans</li><li>Clean up to 500 MB per cleanup</li><li>Cache, logs, trash &amp; old downloads</li><li>Review before cleaning</li><li>No account required</li></ul></div>
+          <div class="glass plan pro"><h3>Pro</h3><ul><li>Unlimited cleanup size</li><li>App leftovers, large files &amp; duplicates</li><li>Old iPhone/iPad backups</li><li>iOS simulators &amp; developer cleanup</li><li>Cleanup history &amp; advanced review</li></ul></div>
+        </div>
+
+        <div class="prices">
+          <div class="glass price"><p class="cad">Monthly</p><p class="amt">$4.99</p><p class="cad">per month · cancel anytime</p></div>
+          <div class="glass price"><span class="badge">Best value</span><p class="cad">Yearly</p><p class="amt">$19.99</p><p class="cad">$1.67/month, billed yearly</p></div>
+          <div class="glass price"><span class="badge">Launch deal</span><p class="cad">Lifetime</p><p class="amt">$29.99</p><p class="cad">pay once, use forever</p></div>
+        </div>
+        <p class="lead" style="margin-top: 24px; font-size: 13px">Secure payment by Stripe. No ads. No tracking. Apple-notarized app.</p>
+      </section>
+
+      <section>
+        <h2>FAQ</h2>
+        <div style="max-width: 720px; margin: 36px auto 0">
+          <details><summary>Is MacCleaner safe?</summary><p>Yes. It never deletes anything automatically, moves files to Trash by default, and protects system-critical paths.</p></details>
+          <details><summary>Does MacCleaner delete files automatically?</summary><p>No. You review and confirm every cleanup. Nothing is removed without your approval.</p></details>
+          <details><summary>Is this a RAM cleaner?</summary><p>No. MacCleaner frees disk space — it doesn't make false performance or "memory boost" claims.</p></details>
+          <details><summary>Does it work offline?</summary><p>Yes. Scanning is local-first and runs entirely on your Mac.</p></details>
+          <details><summary>What can I clean for free?</summary><p>Unlimited scans plus up to 500 MB per cleanup of cache, logs, trash, and old downloads.</p></details>
+          <details><summary>Why is System Data so large on my Mac?</summary><p>It's mostly caches, logs, and leftovers that accumulate over time — exactly what MacCleaner helps you review and clear.</p></details>
+          <details><summary>Can I restore deleted files?</summary><p>Yes. Files moved to Trash can be restored from Finder anytime.</p></details>
+          <details><summary>Does MacCleaner upload my files?</summary><p>No. File names and paths never leave your Mac unless you explicitly contact support.</p></details>
+        </div>
+      </section>
+
+      <section id="download">
+        <div class="glass final">
+          <span class="blob" style="width: 300px; height: 300px; top: -60px; left: 30%; background: #b9aef0"></span>
+          <div style="position: relative; z-index: 1">
+            <h2>Free up space on your Mac, effortlessly.</h2>
+            <p class="lead">Download MacCleaner and reclaim disk space in under a minute.</p>
+            <div class="cta-row" style="margin-top: 28px">
+              <a class="btn btn-primary" href="#">Download for Mac</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="wrap foot-row">
+        <span>© 2026 MacCleaner · Local-first Mac cleanup</span>
+        <span>Apple-notarized · No ads · No tracking</span>
+      </div>
+    </footer>
+  </body>
+</html>
