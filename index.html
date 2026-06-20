@@ -279,5 +279,16 @@
         <span>Apple-notarized · No ads · No tracking</span>
       </div>
     </footer>
+
+    <script>
+      // Fire a GA4 event whenever a "Download for Mac" CTA is clicked, so we can
+      // track downloads and conversion in Analytics.
+      document.querySelectorAll('a.btn-primary').forEach(function (a) {
+        if (!/download/i.test(a.textContent)) return;
+        a.addEventListener('click', function () {
+          if (window.gtag) gtag('event', 'download_click', { location: a.closest('section') ? 'page' : 'nav' });
+        });
+      });
+    </script>
   </body>
 </html>
