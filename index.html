@@ -238,11 +238,15 @@
         </div>
 
         <div class="prices">
-          <div class="glass price"><p class="cad">Monthly</p><p class="amt">$4.99</p><p class="cad">per month · cancel anytime</p></div>
-          <div class="glass price"><span class="badge">Best value</span><p class="cad">Yearly</p><p class="amt">$19.99</p><p class="cad">$1.67/month, billed yearly</p></div>
-          <div class="glass price"><span class="badge">Launch deal</span><p class="cad">Lifetime</p><p class="amt">$29.99</p><p class="cad">pay once, use forever</p></div>
+          <div class="glass price"><p class="cad">Monthly</p><p class="amt">$4.99</p><p class="cad">per month · cancel anytime</p><button class="btn btn-primary buy" data-plan="monthly" style="width:100%;margin-top:16px">Get Pro</button></div>
+          <div class="glass price"><span class="badge">Best value</span><p class="cad">Yearly</p><p class="amt">$19.99</p><p class="cad">$1.67/month, billed yearly</p><button class="btn btn-primary buy" data-plan="yearly" style="width:100%;margin-top:16px">Get Pro</button></div>
+          <div class="glass price"><span class="badge">Launch deal</span><p class="cad">Lifetime</p><p class="amt">$29.99</p><p class="cad">pay once, use forever</p><button class="btn btn-primary buy" data-plan="lifetime" style="width:100%;margin-top:16px">Get Pro</button></div>
         </div>
-        <p class="lead" style="margin-top: 24px; font-size: 13px">Secure payment by Stripe. No ads. No tracking. Apple-notarized app.</p>
+        <p class="lead" style="margin-top: 20px; font-size: 13px">
+          After payment, <a href="#download" style="color:var(--lav)">download the app</a> and sign in with the
+          same email — Pro unlocks automatically.
+        </p>
+        <p class="lead" style="margin-top: 8px; font-size: 13px">Secure payment by Stripe. No ads. No tracking. Apple-notarized app.</p>
       </section>
 
       <section>
@@ -281,12 +285,35 @@
     </footer>
 
     <script>
-      // Fire a GA4 event whenever a "Download for Mac" CTA is clicked, so we can
-      // track downloads and conversion in Analytics.
+      // === Stripe Payment Links — paste your 3 links here (Stripe → Payment Links) ===
+      // Leave blank to fall back to "download the app and buy in-app".
+      var PAYMENT_LINKS = {
+        monthly: "",
+        yearly: "",
+        lifetime: "",
+      };
+
+      // GA4 download tracking
       document.querySelectorAll('a.btn-primary').forEach(function (a) {
         if (!/download/i.test(a.textContent)) return;
         a.addEventListener('click', function () {
           if (window.gtag) gtag('event', 'download_click', { location: a.closest('section') ? 'page' : 'nav' });
+        });
+      });
+
+      // Buy buttons → Stripe Payment Link (web purchase tied to the app)
+      document.querySelectorAll('button.buy').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var plan = b.getAttribute('data-plan');
+          var url = PAYMENT_LINKS[plan];
+          if (window.gtag) gtag('event', 'buy_click', { plan: plan });
+          if (url) {
+            window.location.href = url;
+          } else {
+            // No link set yet → guide user to download and purchase in-app.
+            window.location.href = '#download';
+            alert('Download MacCleaner, then upgrade to Pro inside the app (Upgrade tab).');
+          }
         });
       });
     </script>
