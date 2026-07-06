@@ -115,7 +115,7 @@
         background: linear-gradient(180deg, rgba(243, 247, 238, 0.9), rgba(243, 247, 238, 0));
         backdrop-filter: blur(10px);
       }
-      .brand { display: flex; align-items: flex-start; gap: 14px; }
+      .brand { display: flex; align-items: center; gap: 14px; }
       .brand .mark {
         font-family: "Archivo Expanded", "Archivo", sans-serif;
         font-weight: 800;
@@ -166,12 +166,17 @@
       .pill.ghost:hover { border-color: var(--green); box-shadow: none; }
 
       /* ---------- HERO ---------- */
-      .hero { padding: clamp(40px, 8vh, 96px) 0 40px; display: grid; gap: 48px; grid-template-columns: 1fr; align-items: center; }
+      .hero {
+        padding: clamp(12px, 2.6vh, 28px) 0 24px;
+        display: grid; column-gap: clamp(24px, 4vw, 56px); row-gap: clamp(18px, 4vh, 40px);
+        grid-template-columns: 1fr; align-items: center; align-content: center;
+        min-height: calc(100svh - 66px);
+      }
       @media (min-width: 1000px) { .hero { grid-template-columns: 1.05fr 0.95fr; } }
       .eyebrow {
         display: inline-flex; align-items: center; gap: 10px;
         font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); font-weight: 700;
-        margin-bottom: 22px;
+        margin-bottom: 14px;
       }
       .eyebrow .dot {
         font-family: "Space Mono", monospace; color: var(--ink);
@@ -179,16 +184,16 @@
       }
       .hero-title {
         font-family: "Archivo", sans-serif; font-weight: 800;
-        font-size: clamp(38px, 5.4vw, 74px); line-height: 0.98; letter-spacing: -0.025em;
+        font-size: clamp(34px, 4.6vw, 62px); line-height: 0.98; letter-spacing: -0.025em;
         text-transform: uppercase; color: var(--ink); text-wrap: balance;
       }
       .hero-title .hl {
         background: linear-gradient(110deg, var(--green), var(--green-2) 55%, #b8d92f);
         -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
       }
-      .hero-desc { margin-top: 22px; max-width: 440px; font-size: 15px; line-height: 1.65; color: var(--body); }
-      .hero-cta { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-      .trust-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 34px; }
+      .hero-desc { margin-top: 16px; max-width: 460px; font-size: 15px; line-height: 1.6; color: var(--body); }
+      .hero-cta { margin-top: 22px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+      .trust-row { grid-column: 1 / -1; display: flex; gap: 10px; flex-wrap: wrap; margin-top: 0; }
       .trust-row span {
         font-size: 12px; color: var(--body); background: var(--card); box-shadow: var(--soft-shadow-sm);
         border-radius: 999px; padding: 8px 14px; display: inline-flex; align-items: center; gap: 8px; font-weight: 500;
@@ -325,10 +330,6 @@
     <nav class="nav">
       <a class="brand" href="#top">
         <div class="mark">MACCLEANER</div>
-        <div class="meta">
-          <div class="tagline">The safe way to reclaim space on your Mac</div>
-          <div class="counter mono"><span class="now">001</span> — 004</div>
-        </div>
       </a>
       <div class="nav-center">
         <a class="nav-link" href="#how">How it works</a>
@@ -363,12 +364,6 @@
               >Download for Mac <span class="arr"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a
             >
             <a class="pill ghost" href="#how">See how it works</a>
-          </div>
-          <div class="trust-row">
-            <span><i class="d"></i>Universal · Intel &amp; Apple Silicon</span>
-            <span><i class="d"></i>Local-first</span>
-            <span><i class="d"></i>No auto-delete</span>
-            <span><i class="d"></i>No ads or tracking</span>
           </div>
         </div>
 
@@ -412,6 +407,13 @@
               </div>
             </main>
           </div>
+        </div>
+
+        <div class="trust-row">
+          <span><i class="d"></i>Universal · Intel &amp; Apple Silicon</span>
+          <span><i class="d"></i>Local-first</span>
+          <span><i class="d"></i>No auto-delete</span>
+          <span><i class="d"></i>No ads or tracking</span>
         </div>
       </header>
 
