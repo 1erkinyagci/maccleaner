@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Clear Cache on a Mac Safely</title>
+    <meta name="description" content="What Mac caches are, which ones are safe to delete, how to clear them in Finder — and the ones you should leave alone." />
+    <link rel="canonical" href="https://1erkinyagci.github.io/maccleaner/blog/how-to-clear-cache-on-mac.html" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How to Clear Cache on a Mac Safely" />
+    <meta property="og:description" content="What Mac caches are, which ones are safe to delete, how to clear them in Finder — and the ones you should leave alone." />
+    <meta property="og:url" content="https://1erkinyagci.github.io/maccleaner/blog/how-to-clear-cache-on-mac.html" />
+    <meta property="og:image" content="https://1erkinyagci.github.io/maccleaner/blog/img/dev-d.jpg" />
+    <meta property="og:site_name" content="MacCleaner" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Clear Cache on a Mac Safely" />
+    <meta name="twitter:description" content="What Mac caches are, which ones are safe to delete, how to clear them in Finder — and the ones you should leave alone." />
+    <meta name="twitter:image" content="https://1erkinyagci.github.io/maccleaner/blog/img/dev-d.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../blog.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNNJD0Q0RB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RNNJD0Q0RB");</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Clear Cache on a Mac Safely", "description": "What Mac caches are, which ones are safe to delete, how to clear them in Finder — and the ones you should leave alone.", "image": "https://1erkinyagci.github.io/maccleaner/blog/img/dev-d.jpg", "datePublished": "2026-07-16", "dateModified": "2026-07-16", "author": {"@type": "Organization", "name": "MacCleaner", "url": "https://1erkinyagci.github.io/maccleaner/", "logo": "https://1erkinyagci.github.io/maccleaner/logo-mark.png"}, "publisher": {"@type": "Organization", "name": "MacCleaner", "url": "https://1erkinyagci.github.io/maccleaner/", "logo": "https://1erkinyagci.github.io/maccleaner/logo-mark.png"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://1erkinyagci.github.io/maccleaner/blog/how-to-clear-cache-on-mac.html"}, "inLanguage": "en"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://1erkinyagci.github.io/maccleaner/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://1erkinyagci.github.io/maccleaner/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to Clear Cache on a Mac Safely", "item": "https://1erkinyagci.github.io/maccleaner/blog/how-to-clear-cache-on-mac.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it safe to delete ~/Library/Caches?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Delete the contents of app cache folders rather than the folders themselves, and quit the apps first."}}, {"@type": "Question", "name": "Will clearing cache delete my passwords or settings?", "acceptedAnswer": {"@type": "Answer", "text": "No. Those live in Application Support, Preferences and the Keychain — not in Caches."}}, {"@type": "Question", "name": "How often should I clear caches on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Only when you need space or an app misbehaves. macOS doesn't need routine cache clearing."}}]}</script>
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <nav class="nav">
+      <a class="brand" href="../index.html">
+        <img src="../logo-mark.png" alt="MacCleaner logo" width="30" height="30" />
+        <div class="mark">MACCLEANER</div>
+      </a>
+      <div class="nav-center">
+        <a class="nav-link" href="../index.html#how">How it works</a>
+        <a class="nav-link" href="../index.html#clean">What it cleans</a>
+        <a class="nav-link" href="../index.html#pricing">Pricing</a>
+        <a class="nav-link" href="../blog/index.html">Blog</a>
+      </div>
+      <div class="nav-right">
+        <a class="bracket-btn" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.12/MacCleaner-0.1.12-universal.dmg"><span class="br">[</span> Download <span class="br">]</span></a>
+      </div>
+    </nav>
+    <div class="wrap">
+      <article class="article">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> / <a href="index.html">Blog</a> / <span>How to Clear Cache on a Mac Safely</span>
+        </nav>
+        <h1>How to Clear Cache on a Mac Safely</h1>
+        <p class="byline">MacCleaner · 2026-07-16 · 6 min read</p>
+        <img class="hero-img" src="img/dev-d.jpg" alt="How to Clear Cache on a Mac Safely" width="1200" height="675" />
+
+        <div class="answer">
+          <span class="lbl">Short answer</span>
+          <p>User app caches live in ~/Library/Caches and are safe to delete: they're temporary files apps rebuild automatically. Quit the app first, delete the contents of its cache folder (not the folder itself), then empty the Trash. Leave /System caches alone — macOS manages them.</p>
+        </div>
+
+        <h2>Where Mac caches live</h2><ul><li><code>~/Library/Caches</code> — per-user app caches. <strong>Safe.</strong></li><li><code>/Library/Caches</code> — system-wide app caches. Mostly safe, but be selective.</li><li><code>/System/Library/Caches</code> — macOS internals. <strong>Leave alone.</strong></li></ul><h2>Clearing them by hand</h2><ol><li>Quit the apps you're clearing.</li><li>In Finder press <strong>⇧⌘G</strong> and enter <code>~/Library/Caches</code>.</li><li>Open a specific app's folder and delete its <em>contents</em>. Keep the folder itself.</li><li><a href="how-to-empty-trash-on-mac.html">Empty the Trash</a> — otherwise nothing is freed.</li></ol><div class="note">Deleting cache contents never deletes your documents, settings or logins. Those live in <code>~/Library/Application Support</code> and <code>~/Library/Preferences</code> — different folders entirely.</div><h2>What it costs you</h2><p>Almost nothing. The next launch may take a moment longer while the app rebuilds what it needs, and a browser may re-download some assets. That's the whole downside.</p><h2>Doing it without the guesswork</h2><p>The tedious part is knowing which folders are worth the trouble and which are 4&nbsp;KB of nothing. <a href="../index.html">MacCleaner</a> measures each one, marks the rebuildable ones as safe, shows you exactly what's inside before you commit, and lets you choose Trash (recoverable) or permanent.</p>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-q"><h3>Is it safe to delete ~/Library/Caches?</h3><p>Yes. Delete the contents of app cache folders rather than the folders themselves, and quit the apps first.</p></div><div class="faq-q"><h3>Will clearing cache delete my passwords or settings?</h3><p>No. Those live in Application Support, Preferences and the Keychain — not in Caches.</p></div><div class="faq-q"><h3>How often should I clear caches on a Mac?</h3><p>Only when you need space or an app misbehaves. macOS doesn't need routine cache clearing.</p></div>
+
+        <div class="cta">
+          <h2>See where your space actually went</h2>
+          <p>MacCleaner scans read-only, shows you every file before anything is touched, and lets you choose Trash or permanent. Free for up to 500 MB of cleanup a day.</p>
+          <a class="pill" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.12/MacCleaner-0.1.12-universal.dmg">Download for Mac</a>
+        </div>
+
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul><li><a href="what-is-system-data-on-mac.html">What Is “System Data” on a Mac — and How to Shrink It</a></li><li><a href="how-to-free-up-space-on-mac.html">How to Free Up Space on a Mac (2026 Guide)</a></li><li><a href="is-mac-cleaning-software-safe.html">Is Mac Cleaning Software Safe? What to Look For</a></li></ul>
+        </div>
+      </article>
+    </div>
+    <footer class="foot">
+      <div class="wrap foot-row">
+        <span class="corner"><span class="sq"></span> © 2026 MacCleaner</span>
+        <span>Signed &amp; notarized · Universal · <span class="now">No ads · No tracking</span></span>
+      </div>
+    </footer>
+  </body>
+</html>

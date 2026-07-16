@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Xcode Is Eating Your Disk: DerivedData, Archives and Simulators</title>
+    <meta name="description" content="Where Xcode hides tens of gigabytes, what's safe to delete, and what you'll lose (usually nothing but build time)." />
+    <link rel="canonical" href="https://1erkinyagci.github.io/maccleaner/blog/xcode-derived-data-cleanup.html" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Xcode Is Eating Your Disk: DerivedData, Archives and Simulators" />
+    <meta property="og:description" content="Where Xcode hides tens of gigabytes, what's safe to delete, and what you'll lose (usually nothing but build time)." />
+    <meta property="og:url" content="https://1erkinyagci.github.io/maccleaner/blog/xcode-derived-data-cleanup.html" />
+    <meta property="og:image" content="https://1erkinyagci.github.io/maccleaner/blog/img/dev-a.jpg" />
+    <meta property="og:site_name" content="MacCleaner" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Xcode Is Eating Your Disk: DerivedData, Archives and Simulators" />
+    <meta name="twitter:description" content="Where Xcode hides tens of gigabytes, what's safe to delete, and what you'll lose (usually nothing but build time)." />
+    <meta name="twitter:image" content="https://1erkinyagci.github.io/maccleaner/blog/img/dev-a.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../blog.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNNJD0Q0RB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RNNJD0Q0RB");</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Xcode Is Eating Your Disk: DerivedData, Archives and Simulators", "description": "Where Xcode hides tens of gigabytes, what's safe to delete, and what you'll lose (usually nothing but build time).", "image": "https://1erkinyagci.github.io/maccleaner/blog/img/dev-a.jpg", "datePublished": "2026-07-16", "dateModified": "2026-07-16", "author": {"@type": "Organization", "name": "MacCleaner", "url": "https://1erkinyagci.github.io/maccleaner/", "logo": "https://1erkinyagci.github.io/maccleaner/logo-mark.png"}, "publisher": {"@type": "Organization", "name": "MacCleaner", "url": "https://1erkinyagci.github.io/maccleaner/", "logo": "https://1erkinyagci.github.io/maccleaner/logo-mark.png"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://1erkinyagci.github.io/maccleaner/blog/xcode-derived-data-cleanup.html"}, "inLanguage": "en"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://1erkinyagci.github.io/maccleaner/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://1erkinyagci.github.io/maccleaner/blog/"}, {"@type": "ListItem", "position": 3, "name": "Xcode Is Eating Your Disk: DerivedData, Archives and Simulators", "item": "https://1erkinyagci.github.io/maccleaner/blog/xcode-derived-data-cleanup.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it safe to delete DerivedData?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It's build output and indexes; Xcode regenerates it. Your next build is just slower."}}, {"@type": "Question", "name": "How much space does Xcode use?", "acceptedAnswer": {"@type": "Answer", "text": "On an active development Mac, 20–100 GB is normal once DerivedData, simulators and device support are counted."}}, {"@type": "Question", "name": "Should I delete Xcode Archives?", "acceptedAnswer": {"@type": "Answer", "text": "Only ones you no longer need. They hold the dSYMs required to symbolicate crashes from shipped builds."}}]}</script>
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <nav class="nav">
+      <a class="brand" href="../index.html">
+        <img src="../logo-mark.png" alt="MacCleaner logo" width="30" height="30" />
+        <div class="mark">MACCLEANER</div>
+      </a>
+      <div class="nav-center">
+        <a class="nav-link" href="../index.html#how">How it works</a>
+        <a class="nav-link" href="../index.html#clean">What it cleans</a>
+        <a class="nav-link" href="../index.html#pricing">Pricing</a>
+        <a class="nav-link" href="../blog/index.html">Blog</a>
+      </div>
+      <div class="nav-right">
+        <a class="bracket-btn" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.12/MacCleaner-0.1.12-universal.dmg"><span class="br">[</span> Download <span class="br">]</span></a>
+      </div>
+    </nav>
+    <div class="wrap">
+      <article class="article">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> / <a href="index.html">Blog</a> / <span>Xcode Is Eating Your Disk: DerivedData, Archives and Simulators</span>
+        </nav>
+        <h1>Xcode Is Eating Your Disk: DerivedData, Archives and Simulators</h1>
+        <p class="byline">MacCleaner · 2026-07-16 · 7 min read</p>
+        <img class="hero-img" src="img/dev-a.jpg" alt="Xcode Is Eating Your Disk: DerivedData, Archives and Simulators" width="1200" height="675" />
+
+        <div class="answer">
+          <span class="lbl">Short answer</span>
+          <p>Xcode's disk usage concentrates in DerivedData (~/Library/Developer/Xcode/DerivedData), simulator runtimes and devices (~/Library/Developer/CoreSimulator), device support, and archives. DerivedData and simulator caches are rebuildable and safe to delete. Archives are not — they're your shipped builds and dSYMs.</p>
+        </div>
+
+        <h2>The map</h2><table class="tbl"><tr><th>Path</th><th>What it is</th><th>Safe to delete?</th></tr><tr><td><code>~/Library/Developer/Xcode/DerivedData</code></td><td>Build intermediates, indexes</td><td><strong>Yes</strong> — rebuilt</td></tr><tr><td><code>~/Library/Developer/CoreSimulator/Devices</code></td><td>Simulator devices &amp; their data</td><td>Yes — recreated</td></tr><tr><td><code>~/Library/Developer/CoreSimulator/Caches</code></td><td>Downloaded runtimes cache</td><td>Yes</td></tr><tr><td><code>~/Library/Developer/Xcode/iOS DeviceSupport</code></td><td>Symbols per device/OS</td><td>Yes — re-created on connect</td></tr><tr><td><code>~/Library/Developer/Xcode/Archives</code></td><td>Shipped builds + dSYMs</td><td><strong>Review</strong> — needed for crash symbolication</td></tr></table><h2>DerivedData: the biggest, easiest win</h2><p>DerivedData holds per-project build output and indexes. It regrows every time you build, and deleting it is the classic fix for “Xcode is being weird”. On an active machine it's routinely 10–60&nbsp;GB.</p><p>You can nuke it from Terminal:</p><p><code>rm -rf ~/Library/Developer/Xcode/DerivedData/*</code></p><p>The cost: your next build is a clean build, and indexing runs again. That's it.</p><h2>Simulators</h2><p>Every simulator device keeps its own disk image and installed apps. Old runtimes pile up across Xcode upgrades. <code>xcrun simctl delete unavailable</code> removes devices whose runtimes are gone — a safe first pass.</p><h2>Archives are different</h2><div class="note">Don't bulk-delete Archives. They contain the dSYMs you need to symbolicate crash reports from builds you already shipped. Keep the ones matching live releases.</div><h2>Doing it with a safety net</h2><p><a href="../index.html">MacCleaner</a> classifies these for you: DerivedData, simulators and device support come up as <em>safe to remove</em> and pre-selected; Archives are flagged <em>needs review</em> and never auto-selected. You can preview every item, then choose Trash or permanent.</p>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-q"><h3>Is it safe to delete DerivedData?</h3><p>Yes. It's build output and indexes; Xcode regenerates it. Your next build is just slower.</p></div><div class="faq-q"><h3>How much space does Xcode use?</h3><p>On an active development Mac, 20–100 GB is normal once DerivedData, simulators and device support are counted.</p></div><div class="faq-q"><h3>Should I delete Xcode Archives?</h3><p>Only ones you no longer need. They hold the dSYMs required to symbolicate crashes from shipped builds.</p></div>
+
+        <div class="cta">
+          <h2>See where your space actually went</h2>
+          <p>MacCleaner scans read-only, shows you every file before anything is touched, and lets you choose Trash or permanent. Free for up to 500 MB of cleanup a day.</p>
+          <a class="pill" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.12/MacCleaner-0.1.12-universal.dmg">Download for Mac</a>
+        </div>
+
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul><li><a href="node-modules-npm-cache-cleanup.html">node_modules and npm Cache: Reclaiming Developer Disk Space</a></li><li><a href="how-to-free-up-space-on-mac.html">How to Free Up Space on a Mac (2026 Guide)</a></li><li><a href="what-is-system-data-on-mac.html">What Is “System Data” on a Mac — and How to Shrink It</a></li></ul>
+        </div>
+      </article>
+    </div>
+    <footer class="foot">
+      <div class="wrap foot-row">
+        <span class="corner"><span class="sq"></span> © 2026 MacCleaner</span>
+        <span>Signed &amp; notarized · Universal · <span class="now">No ads · No tracking</span></span>
+      </div>
+    </footer>
+  </body>
+</html>

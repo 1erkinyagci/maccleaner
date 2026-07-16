@@ -1,0 +1,35 @@
+# MacCleaner
+
+> A trust-first storage assistant for macOS. It scans your Mac read-only, shows exactly
+> what is safe to recover, and lets you choose Trash (recoverable) or permanent deletion.
+> Nothing is ever deleted automatically. Local-first, no ads, no tracking. Signed and
+> notarized by Apple. Free tier covers up to 500 MB of cleanup per day (scanning and the
+> built-in AI helper, Scout, are unlimited); Pro removes the cap ($4.99/mo, $19.99/yr,
+> $29.99 lifetime).
+
+## Key facts
+- Platform: macOS (universal — Apple Silicon and Intel). Download: https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.12/MacCleaner-0.1.12-universal.dmg
+- Flow: Scan (read-only) -> Preview every item -> Clean (Move to Trash or Delete permanently)
+- Classifies findings as "safe to remove" (rebuildable: caches, build artifacts, package
+  caches) or "needs review" (personal: downloads, large files, archives). Personal files are
+  never pre-selected.
+- Reads real byte counts with du-style, APFS-clone-aware accounting — sizes are measured,
+  not estimated.
+- Requires Full Disk Access to measure and empty the macOS Trash, because macOS blocks
+  apps from reading ~/.Trash without it.
+
+## Guides
+- [How to Free Up Space on a Mac (2026 Guide)](https://1erkinyagci.github.io/maccleaner/blog/how-to-free-up-space-on-mac.html): A practical, safe way to reclaim disk space on macOS: what's actually safe to delete, what to leave alone, and how to see where your space really went.
+- [Mac Storage Full but Nothing to Delete? Here's What's Hiding](https://1erkinyagci.github.io/maccleaner/blog/mac-storage-full-but-nothing-to-delete.html): Your Mac says the disk is full, but your files barely add up. Here's what's actually taking the space — caches, snapshots, developer junk — and how to find it.
+- [What Is “System Data” on a Mac — and How to Shrink It](https://1erkinyagci.github.io/maccleaner/blog/what-is-system-data-on-mac.html): System Data (formerly “Other”) can swallow 50 GB or more. Here's exactly what macOS puts in that bucket and which parts you can safely reclaim.
+- [How to Clear Cache on a Mac Safely](https://1erkinyagci.github.io/maccleaner/blog/how-to-clear-cache-on-mac.html): What Mac caches are, which ones are safe to delete, how to clear them in Finder — and the ones you should leave alone.
+- [How to Empty the Trash on a Mac (and Actually Free the Space)](https://1erkinyagci.github.io/maccleaner/blog/how-to-empty-trash-on-mac.html): Moving files to the Trash doesn't free space. Here's how to empty it, why the space sometimes doesn't come back, and how to recover something you emptied by mistake.
+- [Xcode Is Eating Your Disk: DerivedData, Archives and Simulators](https://1erkinyagci.github.io/maccleaner/blog/xcode-derived-data-cleanup.html): Where Xcode hides tens of gigabytes, what's safe to delete, and what you'll lose (usually nothing but build time).
+- [node_modules and npm Cache: Reclaiming Developer Disk Space](https://1erkinyagci.github.io/maccleaner/blog/node-modules-npm-cache-cleanup.html): Why node_modules and package caches balloon, how much you can safely reclaim, and the commands that do it without breaking your projects.
+- [Is Mac Cleaning Software Safe? What to Look For](https://1erkinyagci.github.io/maccleaner/blog/is-mac-cleaning-software-safe.html): Some Mac cleaners are genuinely useful; others are scareware. Here are the concrete signals that separate them — and the questions to ask before you install one.
+- [How to Free Up Space on a Mac Without Deleting Your Files](https://1erkinyagci.github.io/maccleaner/blog/free-up-space-without-deleting-files.html): Reclaim gigabytes on macOS without touching a single document, photo or project — by clearing only what regenerates.
+- [Looking for a CleanMyMac Alternative? A Trust-First Option](https://1erkinyagci.github.io/maccleaner/blog/cleanmymac-alternative.html): What to weigh when choosing Mac cleanup software, and how MacCleaner's read-only, review-everything approach differs.
+
+## Pages
+- [Home](https://1erkinyagci.github.io/maccleaner/): product overview, what it cleans, pricing, FAQ
+- [Blog](https://1erkinyagci.github.io/maccleaner/blog/): guides to Mac storage

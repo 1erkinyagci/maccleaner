@@ -28,6 +28,60 @@
 
     <meta name="google-site-verification" content="google6019e71938689f2f.html" />
 
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "MacCleaner",
+        "applicationCategory": "UtilitiesApplication",
+        "applicationSubCategory": "Disk Space Cleaner",
+        "operatingSystem": "macOS 12 or later (Universal — Apple Silicon and Intel)",
+        "softwareVersion": "0.1.12",
+        "url": "https://1erkinyagci.github.io/maccleaner/",
+        "downloadUrl": "https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.12/MacCleaner-0.1.12-universal.dmg",
+        "image": "https://1erkinyagci.github.io/maccleaner/og.png",
+        "description": "A trust-first AI storage assistant for Mac. Scans read-only to show exactly what's safe to recover, explains every recommendation with Scout, and never deletes anything automatically — you choose Trash or permanent.",
+        "featureList": [
+          "Read-only storage scan",
+          "Risk classification: safe to remove vs needs review",
+          "Preview every file before cleaning",
+          "Move to Trash (recoverable) or delete permanently",
+          "Analyze and empty your Mac's Trash",
+          "Scout — built-in AI helper that explains what's safe",
+          "Local-first, no ads, no tracking"
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "name": "MacCleaner",
+          "url": "https://1erkinyagci.github.io/maccleaner/",
+          "logo": "https://1erkinyagci.github.io/maccleaner/logo-mark.png"
+        },
+        "offers": [
+          { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "Unlimited read-only scans and Scout AI help, plus up to 500 MB of cleanup per day." },
+          { "@type": "Offer", "name": "Pro Monthly", "price": "4.99", "priceCurrency": "USD", "description": "Unlimited cleanup, billed monthly." },
+          { "@type": "Offer", "name": "Pro Yearly", "price": "19.99", "priceCurrency": "USD", "description": "Unlimited cleanup, billed yearly." },
+          { "@type": "Offer", "name": "Lifetime", "price": "29.99", "priceCurrency": "USD", "description": "Unlimited cleanup, one-time payment." }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Is MacCleaner safe?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It never deletes anything automatically, moves files to a recoverable Trash by default, and protects system-critical and personal paths — those can't even be selected." } },
+          { "@type": "Question", "name": "Does it delete files automatically?", "acceptedAnswer": { "@type": "Answer", "text": "No. Every cleanup is analyze, review, confirm. Nothing is removed without your approval." } },
+          { "@type": "Question", "name": "Who is Scout?", "acceptedAnswer": { "@type": "Answer", "text": "Scout is the built-in AI helper. It narrates the scan, explains what each group is and why it's safe to recover, and answers questions about your Mac's storage." } },
+          { "@type": "Question", "name": "Is this a RAM cleaner?", "acceptedAnswer": { "@type": "Answer", "text": "No. MacCleaner frees disk space. It makes no performance or memory-boost claims." } },
+          { "@type": "Question", "name": "Does it work offline?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scanning is local-first and runs entirely on your Mac." } },
+          { "@type": "Question", "name": "What can I do for free?", "acceptedAnswer": { "@type": "Answer", "text": "Unlimited read-only scans, Scout's full AI help, and up to 500 MB of cleanup per day. Pro removes the daily cap." } },
+          { "@type": "Question", "name": "Why is System Data so large on my Mac?", "acceptedAnswer": { "@type": "Answer", "text": "It's mostly caches, logs, APFS snapshots and developer build artifacts — the leftovers macOS can't file under Apps, Photos or Documents." } },
+          { "@type": "Question", "name": "Can I restore cleaned files?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Cleanups land in MacCleaner's recoverable Trash first — restore any item until you choose to empty it." } }
+        ]
+      }
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNNJD0Q0RB"></script>
     <script>
@@ -345,6 +399,7 @@
         <a class="nav-link" href="#how">How it works</a>
         <a class="nav-link" href="#clean">What it cleans</a>
         <a class="nav-link" href="#pricing">Pricing</a>
+        <a class="nav-link" href="blog/index.html">Blog</a>
       </div>
       <div class="nav-right">
         <a class="signin" href="#pricing">Get Pro</a>
@@ -574,7 +629,8 @@
           <details><summary>Does it work offline?</summary><p>Yes. Scanning is local-first and runs entirely on your Mac.</p></details>
           <details><summary>What can I do for free?</summary><p>Unlimited read-only scans, Scout's full AI help, and up to 500 MB of cleanup per day. Pro removes the daily cap for unlimited cleanup.</p></details>
           <details><summary>Why is System Data so large on my Mac?</summary><p>It's mostly caches, logs, dev junk, and leftovers — exactly what the System Data Inspector helps you understand and clear.</p></details>
-          <details><summary>Can I restore cleaned files?</summary><p>Yes. Files moved to Trash can be restored from Finder anytime.</p></details>
+          <details><summary>Can I restore cleaned files?</summary><p>Yes. Cleanups land in MacCleaner's recoverable Trash first — restore any item until you choose to empty it.</p></details>
+          <details><summary>Where can I learn more about Mac storage?</summary><p>Our <a href="blog/index.html">blog</a> has practical guides: <a href="blog/what-is-system-data-on-mac.html">what System Data actually is</a>, <a href="blog/how-to-clear-cache-on-mac.html">clearing caches safely</a>, and <a href="blog/xcode-derived-data-cleanup.html">reclaiming Xcode's disk space</a>.</p></details>
         </div>
       </section>
 
