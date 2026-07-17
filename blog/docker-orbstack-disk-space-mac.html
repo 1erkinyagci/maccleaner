@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Docker and OrbStack Disk Bloat on a Mac (2026 Cleanup Guide)</title>
+    <meta name="description" content="Container tooling quietly claims tens of gigabytes on a Mac. Here's why Docker's disk image never shrinks, how OrbStack differs, and how to reclaim it." />
+    <link rel="canonical" href="https://1erkinyagci.github.io/maccleaner/blog/docker-orbstack-disk-space-mac.html" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Docker and OrbStack Disk Bloat on a Mac (2026 Cleanup Guide)" />
+    <meta property="og:description" content="Container tooling quietly claims tens of gigabytes on a Mac. Here's why Docker's disk image never shrinks, how OrbStack differs, and how to reclaim it." />
+    <meta property="og:url" content="https://1erkinyagci.github.io/maccleaner/blog/docker-orbstack-disk-space-mac.html" />
+    <meta property="og:image" content="https://1erkinyagci.github.io/maccleaner/blog/img/containers.jpg" />
+    <meta property="og:site_name" content="MacCleaner" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Docker and OrbStack Disk Bloat on a Mac (2026 Cleanup Guide)" />
+    <meta name="twitter:description" content="Container tooling quietly claims tens of gigabytes on a Mac. Here's why Docker's disk image never shrinks, how OrbStack differs, and how to reclaim it." />
+    <meta name="twitter:image" content="https://1erkinyagci.github.io/maccleaner/blog/img/containers.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../blog.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNNJD0Q0RB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RNNJD0Q0RB");</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Docker and OrbStack Disk Bloat on a Mac (2026 Cleanup Guide)", "description": "Container tooling quietly claims tens of gigabytes on a Mac. Here's why Docker's disk image never shrinks, how OrbStack differs, and how to reclaim it.", "image": "https://1erkinyagci.github.io/maccleaner/blog/img/containers.jpg", "datePublished": "2026-07-18", "dateModified": "2026-07-18", "author": {"@type": "Organization", "name": "MacCleaner", "url": "https://1erkinyagci.github.io/maccleaner/", "logo": "https://1erkinyagci.github.io/maccleaner/logo-mark.png"}, "publisher": {"@type": "Organization", "name": "MacCleaner", "url": "https://1erkinyagci.github.io/maccleaner/", "logo": "https://1erkinyagci.github.io/maccleaner/logo-mark.png"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://1erkinyagci.github.io/maccleaner/blog/docker-orbstack-disk-space-mac.html"}, "inLanguage": "en"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://1erkinyagci.github.io/maccleaner/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://1erkinyagci.github.io/maccleaner/blog/"}, {"@type": "ListItem", "position": 3, "name": "Docker and OrbStack Disk Bloat on a Mac (2026 Cleanup Guide)", "item": "https://1erkinyagci.github.io/maccleaner/blog/docker-orbstack-disk-space-mac.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why doesn't my disk space come back after docker system prune?", "acceptedAnswer": {"@type": "Answer", "text": "Because Docker Desktop stores data in a virtual disk image (Docker.raw) that shrinks inside but not on disk. Prune frees internal space; compact or delete the image to return it to macOS."}}, {"@type": "Question", "name": "Is docker system prune safe?", "acceptedAnswer": {"@type": "Answer", "text": "It removes unused images, containers, networks and (with --volumes) volumes. Images and build cache re-pull safely; back up any stopped container or volume you still need first."}}, {"@type": "Question", "name": "Does OrbStack use less disk than Docker Desktop?", "acceptedAnswer": {"@type": "Answer", "text": "Generally yes — it's thin-provisioned and returns freed space more readily. It still accumulates images over time, so periodic pruning still helps."}}]}</script>
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <nav class="nav">
+      <a class="brand" href="../index.html">
+        <img src="../logo-mark.png" alt="MacCleaner logo" width="30" height="30" />
+        <div class="mark">MACCLEANER</div>
+      </a>
+      <div class="nav-center">
+        <a class="nav-link" href="../index.html#how">How it works</a>
+        <a class="nav-link" href="../index.html#clean">What it cleans</a>
+        <a class="nav-link" href="../index.html#pricing">Pricing</a>
+        <a class="nav-link" href="../blog/index.html">Blog</a>
+      </div>
+      <div class="nav-right">
+        <a class="bracket-btn" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.12/MacCleaner-0.1.12-universal.dmg"><span class="br">[</span> Download <span class="br">]</span></a>
+      </div>
+    </nav>
+    <div class="wrap">
+      <article class="article">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> / <a href="index.html">Blog</a> / <span>Docker and OrbStack Disk Bloat on a Mac (2026 Cleanup Guide)</span>
+        </nav>
+        <h1>Docker and OrbStack Disk Bloat on a Mac (2026 Cleanup Guide)</h1>
+        <p class="byline">MacCleaner · 2026-07-18 · 7 min read</p>
+        <img class="hero-img" src="img/containers.jpg" alt="Docker and OrbStack Disk Bloat on a Mac (2026 Cleanup Guide)" width="1200" height="675" />
+
+        <div class="answer">
+          <span class="lbl">Short answer</span>
+          <p>Docker Desktop stores everything in a single virtual disk image (Docker.raw) that grows but never automatically shrinks — pruning frees space inside it, but you may need to compact it to return space to macOS. OrbStack is thin-provisioned and gives space back more readily. Either way, unused images, build cache and volumes are re-pullable, so pruning them is safe.</p>
+        </div>
+
+        <h2>Why containers eat so much disk</h2><p>Every image layer, stopped container, named volume and build-cache entry is kept until you explicitly remove it. On an active machine in 2026, that's routinely <strong>30–80&nbsp;GB</strong> — and most of it is images you pulled once for a project you've since finished.</p><h2>Docker's disk image never shrinks on its own</h2><p>Docker Desktop keeps its data inside one big file:</p><p><code>~/Library/Containers/com.docker.docker/Data/vms/0/data/Docker.raw</code></p><p>Here's the gotcha that catches everyone: deleting images frees space <em>inside</em> that file, but the file itself stays large on your Mac. To actually return the bytes to macOS you prune first, then compact:</p><ul><li><code>docker system prune -a --volumes</code> — removes unused images, containers, networks and volumes.</li><li><code>docker builder prune</code> — clears the build cache (often the biggest single chunk).</li><li>Then, in <strong>Docker Desktop → Settings → Resources → Advanced</strong>, use the disk-image controls to reclaim, or delete <code>Docker.raw</code> to reset it entirely.</li></ul><div class="note">Prune removes anything not currently in use. If you have a stopped container or volume you still need, back it up first — but images and build cache always re-pull.</div><h2>OrbStack handles it better</h2><p>OrbStack, the popular lighter alternative, stores its data under <code>~/.orbstack</code> and is thin-provisioned, so it releases space more gracefully. It still accumulates images, though — the same prune habits apply:</p><p><code>docker system prune -a</code> (OrbStack is Docker-compatible), or manage images in the OrbStack app. If you've fully switched away from Docker Desktop, deleting its leftover <code>Docker.raw</code> can reclaim a large one-time chunk.</p><h2>Don't forget the sibling caches</h2><p>Container work rarely travels alone. The same machine usually also has <a href="node-modules-npm-cache-cleanup.html">node_modules and package caches</a>, <a href="xcode-derived-data-cleanup.html">Xcode DerivedData</a>, and increasingly <a href="local-ai-models-disk-space-mac.html">local AI models</a>. Sweeping all of them together is where a developer Mac gets 100&nbsp;GB back.</p><p><a href="../index.html">MacCleaner</a> measures the container footprint alongside those other groups, shows real sizes before you touch anything, and keeps cleanups recoverable.</p>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-q"><h3>Why doesn't my disk space come back after docker system prune?</h3><p>Because Docker Desktop stores data in a virtual disk image (Docker.raw) that shrinks inside but not on disk. Prune frees internal space; compact or delete the image to return it to macOS.</p></div><div class="faq-q"><h3>Is docker system prune safe?</h3><p>It removes unused images, containers, networks and (with --volumes) volumes. Images and build cache re-pull safely; back up any stopped container or volume you still need first.</p></div><div class="faq-q"><h3>Does OrbStack use less disk than Docker Desktop?</h3><p>Generally yes — it's thin-provisioned and returns freed space more readily. It still accumulates images over time, so periodic pruning still helps.</p></div>
+
+        <div class="cta">
+          <h2>See where your space actually went</h2>
+          <p>MacCleaner scans read-only, shows you every file before anything is touched, and lets you choose Trash or permanent. Free for up to 500 MB of cleanup a day.</p>
+          <a class="pill" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.12/MacCleaner-0.1.12-universal.dmg">Download for Mac</a>
+        </div>
+
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul><li><a href="local-ai-models-disk-space-mac.html">Local AI Models Eating Your Disk: Ollama, LM Studio (2026)</a></li><li><a href="node-modules-npm-cache-cleanup.html">node_modules and npm Cache: Reclaiming Developer Disk Space</a></li><li><a href="xcode-derived-data-cleanup.html">Xcode Is Eating Your Disk: DerivedData, Archives and Simulators</a></li></ul>
+        </div>
+      </article>
+    </div>
+    <footer class="foot">
+      <div class="wrap foot-row">
+        <span class="corner"><span class="sq"></span> © 2026 MacCleaner</span>
+        <span>Signed &amp; notarized · Universal · <span class="now">No ads · No tracking</span></span>
+      </div>
+    </footer>
+  </body>
+</html>

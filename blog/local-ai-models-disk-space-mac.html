@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Local AI Models Eating Your Disk: Ollama, LM Studio (2026)</title>
+    <meta name="description" content="Running LLMs locally in 2026? Ollama, LM Studio and the Hugging Face cache hoard tens of gigabytes. Here's how to find and reclaim the space safely." />
+    <link rel="canonical" href="https://1erkinyagci.github.io/maccleaner/blog/local-ai-models-disk-space-mac.html" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Local AI Models Eating Your Disk: Ollama, LM Studio (2026)" />
+    <meta property="og:description" content="Running LLMs locally in 2026? Ollama, LM Studio and the Hugging Face cache hoard tens of gigabytes. Here's how to find and reclaim the space safely." />
+    <meta property="og:url" content="https://1erkinyagci.github.io/maccleaner/blog/local-ai-models-disk-space-mac.html" />
+    <meta property="og:image" content="https://1erkinyagci.github.io/maccleaner/blog/img/ai-models.jpg" />
+    <meta property="og:site_name" content="MacCleaner" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Local AI Models Eating Your Disk: Ollama, LM Studio (2026)" />
+    <meta name="twitter:description" content="Running LLMs locally in 2026? Ollama, LM Studio and the Hugging Face cache hoard tens of gigabytes. Here's how to find and reclaim the space safely." />
+    <meta name="twitter:image" content="https://1erkinyagci.github.io/maccleaner/blog/img/ai-models.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../blog.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNNJD0Q0RB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RNNJD0Q0RB");</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Local AI Models Eating Your Disk: Ollama, LM Studio (2026)", "description": "Running LLMs locally in 2026? Ollama, LM Studio and the Hugging Face cache hoard tens of gigabytes. Here's how to find and reclaim the space safely.", "image": "https://1erkinyagci.github.io/maccleaner/blog/img/ai-models.jpg", "datePublished": "2026-07-18", "dateModified": "2026-07-18", "author": {"@type": "Organization", "name": "MacCleaner", "url": "https://1erkinyagci.github.io/maccleaner/", "logo": "https://1erkinyagci.github.io/maccleaner/logo-mark.png"}, "publisher": {"@type": "Organization", "name": "MacCleaner", "url": "https://1erkinyagci.github.io/maccleaner/", "logo": "https://1erkinyagci.github.io/maccleaner/logo-mark.png"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://1erkinyagci.github.io/maccleaner/blog/local-ai-models-disk-space-mac.html"}, "inLanguage": "en"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://1erkinyagci.github.io/maccleaner/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://1erkinyagci.github.io/maccleaner/blog/"}, {"@type": "ListItem", "position": 3, "name": "Local AI Models Eating Your Disk: Ollama, LM Studio (2026)", "item": "https://1erkinyagci.github.io/maccleaner/blog/local-ai-models-disk-space-mac.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it safe to delete Ollama models?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use ollama rm to remove them, or delete ~/.ollama/models. Ollama re-downloads any model on demand, so you only lose the time to fetch it again."}}, {"@type": "Question", "name": "How much disk can local AI models use?", "acceptedAnswer": {"@type": "Answer", "text": "On an active 2026 ML/dev Mac, 50–150 GB across Ollama, LM Studio and the Hugging Face cache is common — a single large model can be 40 GB by itself."}}, {"@type": "Question", "name": "Will clearing the Hugging Face cache break my projects?", "acceptedAnswer": {"@type": "Answer", "text": "No, as long as you have an internet connection for the next run. Cached models are re-fetched automatically; only locally-trained weights you never saved elsewhere are unique."}}]}</script>
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <nav class="nav">
+      <a class="brand" href="../index.html">
+        <img src="../logo-mark.png" alt="MacCleaner logo" width="30" height="30" />
+        <div class="mark">MACCLEANER</div>
+      </a>
+      <div class="nav-center">
+        <a class="nav-link" href="../index.html#how">How it works</a>
+        <a class="nav-link" href="../index.html#clean">What it cleans</a>
+        <a class="nav-link" href="../index.html#pricing">Pricing</a>
+        <a class="nav-link" href="../blog/index.html">Blog</a>
+      </div>
+      <div class="nav-right">
+        <a class="bracket-btn" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.12/MacCleaner-0.1.12-universal.dmg"><span class="br">[</span> Download <span class="br">]</span></a>
+      </div>
+    </nav>
+    <div class="wrap">
+      <article class="article">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> / <a href="index.html">Blog</a> / <span>Local AI Models Eating Your Disk: Ollama, LM Studio (2026)</span>
+        </nav>
+        <h1>Local AI Models Eating Your Disk: Ollama, LM Studio (2026)</h1>
+        <p class="byline">MacCleaner · 2026-07-18 · 7 min read</p>
+        <img class="hero-img" src="img/ai-models.jpg" alt="Local AI Models Eating Your Disk: Ollama, LM Studio (2026)" width="1200" height="675" />
+
+        <div class="answer">
+          <span class="lbl">Short answer</span>
+          <p>Local model files are among the biggest reclaimable items on a 2026 developer Mac. Ollama stores models in ~/.ollama/models, LM Studio in ~/.lmstudio/models, and anything pulled from Hugging Face lands in ~/.cache/huggingface/hub. Each model is multiple gigabytes and every one is re-downloadable, so deleting the ones you no longer use is completely safe.</p>
+        </div>
+
+        <h2>Why local models got so heavy</h2><p>Running models on your own Mac exploded in popularity once Apple Silicon made it practical. The catch: every model you try is a multi-gigabyte <code>GGUF</code> or safetensors file, and the tools keep them forever by default. Pull a dozen models to “compare” them and you're suddenly down 60–100&nbsp;GB you forgot about.</p><h2>Where each tool hides its models</h2><table class="tbl"><tr><th>Tool</th><th>Location</th><th>Reclaim with</th></tr><tr><td>Ollama</td><td><code>~/.ollama/models</code></td><td><code>ollama rm &lt;model&gt;</code></td></tr><tr><td>LM Studio</td><td><code>~/.lmstudio/models</code></td><td>Delete inside the app, or remove the folder</td></tr><tr><td>Hugging Face cache</td><td><code>~/.cache/huggingface/hub</code></td><td><code>huggingface-cli delete-cache</code></td></tr><tr><td>llama.cpp / manual GGUF</td><td>wherever you saved them</td><td>plain <code>rm</code></td></tr></table><p>All of these are download caches. Delete a model and the tool simply fetches it again next time you ask for it.</p><h2>Cleaning up Ollama</h2><p>List what you've got and its sizes, then remove what you don't use:</p><p><code>ollama list</code></p><p><code>ollama rm llama3.1:70b</code></p><p>The 70B-class models are the space eaters — a single one can be 40&nbsp;GB. If you only reach for a small model day-to-day, the big ones are pure dead weight until you next need them.</p><h2>The Hugging Face cache is the sneaky one</h2><p>Anything you ran through <code>transformers</code>, <code>diffusers</code> or a <code>from_pretrained</code> call was cached under <code>~/.cache/huggingface</code> — including models you only used once. It's often the single largest hidden folder on an ML machine.</p><p><code>huggingface-cli scan-cache</code> shows what's there; <code>huggingface-cli delete-cache</code> gives you a checklist to prune it. Everything removed is re-downloadable.</p><div class="note">Only fine-tuned weights you trained yourself and never pushed anywhere are irreplaceable. Base models and anything on the Hub can always come back.</div><h2>Finding it without hunting</h2><p><a href="../index.html">MacCleaner</a> surfaces these model caches as their own group with real measured sizes, so you can see that <code>~/.ollama</code> is holding 80&nbsp;GB before you decide. It's read-only until you act, keeps deletions recoverable, and never pre-selects anything. Pair it with the <a href="node-modules-npm-cache-cleanup.html">node_modules guide</a> and <a href="xcode-derived-data-cleanup.html">Xcode guide</a> for a full developer sweep.</p>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-q"><h3>Is it safe to delete Ollama models?</h3><p>Yes. Use ollama rm to remove them, or delete ~/.ollama/models. Ollama re-downloads any model on demand, so you only lose the time to fetch it again.</p></div><div class="faq-q"><h3>How much disk can local AI models use?</h3><p>On an active 2026 ML/dev Mac, 50–150 GB across Ollama, LM Studio and the Hugging Face cache is common — a single large model can be 40 GB by itself.</p></div><div class="faq-q"><h3>Will clearing the Hugging Face cache break my projects?</h3><p>No, as long as you have an internet connection for the next run. Cached models are re-fetched automatically; only locally-trained weights you never saved elsewhere are unique.</p></div>
+
+        <div class="cta">
+          <h2>See where your space actually went</h2>
+          <p>MacCleaner scans read-only, shows you every file before anything is touched, and lets you choose Trash or permanent. Free for up to 500 MB of cleanup a day.</p>
+          <a class="pill" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.12/MacCleaner-0.1.12-universal.dmg">Download for Mac</a>
+        </div>
+
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul><li><a href="xcode-derived-data-cleanup.html">Xcode Is Eating Your Disk: DerivedData, Archives and Simulators</a></li><li><a href="node-modules-npm-cache-cleanup.html">node_modules and npm Cache: Reclaiming Developer Disk Space</a></li><li><a href="docker-orbstack-disk-space-mac.html">Docker and OrbStack Disk Bloat on a Mac (2026 Cleanup Guide)</a></li></ul>
+        </div>
+      </article>
+    </div>
+    <footer class="foot">
+      <div class="wrap foot-row">
+        <span class="corner"><span class="sq"></span> © 2026 MacCleaner</span>
+        <span>Signed &amp; notarized · Universal · <span class="now">No ads · No tracking</span></span>
+      </div>
+    </footer>
+  </body>
+</html>
