@@ -1,4 +1,4 @@
-# MacCleaner — Landing Site....
+# MacCleaner — Landing Site
 
 Marketing/landing site for **MacCleaner**, the trust-first AI storage assistant for Mac.
 Static HTML/CSS (no build step) served from this repo.
