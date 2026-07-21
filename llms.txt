@@ -19,6 +19,11 @@
   apps from reading ~/.Trash without it.
 
 ## Guides
+- [The Best Mac Cleaner Apps in 2026](https://1erkinyagci.github.io/maccleaner/blog/best-mac-cleaner-2026.html): An honest, category-by-category look at the best ways to reclaim disk space on a Mac in 2026 — from free manual methods to focused tools and full suites.
+- [The Best Free Mac Cleaner in 2026](https://1erkinyagci.github.io/maccleaner/blog/best-free-mac-cleaner-2026.html): The genuinely free ways to reclaim disk space on a Mac in 2026 — what each covers, where the limits are, and when free is all you actually need.
+- [The Best Mac Cleaner for Developers in 2026](https://1erkinyagci.github.io/maccleaner/blog/best-mac-cleaner-for-developers-2026.html): Developer Macs fill up fastest. The best 2026 approaches to reclaim the tens of gigabytes hiding in Xcode, node_modules, Docker and local AI models.
+- [MacCleaner vs CleanMyMac: Which Fits You? (2026)](https://1erkinyagci.github.io/maccleaner/blog/maccleaner-vs-cleanmymac.html): A fair 2026 head-to-head: MacCleaner's focused, trust-first storage cleanup versus CleanMyMac's all-in-one maintenance suite — and how to choose.
+- [MacCleaner vs DaisyDisk: Map or Clean? (2026)](https://1erkinyagci.github.io/maccleaner/blog/maccleaner-vs-daisydisk.html): DaisyDisk shows where your space went with a beautiful disk map; MacCleaner classifies what's safe to remove and cleans it. How they differ in 2026.
 - [Why Apple Intelligence Is Using Gigabytes on Your Mac (2026)](https://1erkinyagci.github.io/maccleaner/blog/apple-intelligence-storage-mac.html): Apple Intelligence downloads on-device AI models that can occupy 7 GB or more. Here's where that space goes in 2026, whether you can reclaim it, and how.
 - [Local AI Models Eating Your Disk: Ollama, LM Studio (2026)](https://1erkinyagci.github.io/maccleaner/blog/local-ai-models-disk-space-mac.html): Running LLMs locally in 2026? Ollama, LM Studio and the Hugging Face cache hoard tens of gigabytes. Here's how to find and reclaim the space safely.
 - [Freeing Up Space on macOS Tahoe: What Changed in 2026](https://1erkinyagci.github.io/maccleaner/blog/macos-tahoe-storage-guide.html): A 2026 storage guide for macOS Tahoe (macOS 26): where the built-in tools live now, what Apple Intelligence added, and the safe wins that still work.
