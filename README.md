@@ -43,7 +43,7 @@ The copy must match the shipped app:
 
 - **Story:** scan read-only → see what's *safely recoverable* → **Scout** (the built-in AI helper) explains everything → you choose Trash or permanent. Nothing is ever deleted automatically.
 - **Pricing:** Free = up to **500 MB of cleanup per day** (scanning + Scout always free/unlimited); Pro = unlimited cleanup — $4.99/mo, $19.99/yr, $29.99 lifetime.
-- **Download** links point at the latest GitHub Release DMG (currently `v0.1.12`). Update them in `index.html` + `success.html` when a new version ships — and the `softwareVersion` / `downloadUrl` in the `SoftwareApplication` JSON-LD too.
+- **Download** links point at the latest GitHub Release DMG (currently `v0.1.13`). Update them in `index.html` + `success.html` when a new version ships — and the `softwareVersion` / `downloadUrl` in the `SoftwareApplication` JSON-LD too.
 
 ## Adding a blog post
 
