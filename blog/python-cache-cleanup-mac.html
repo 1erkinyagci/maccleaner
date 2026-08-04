@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reclaim Disk from pip, conda and Python Caches on a Mac</title>
+    <meta name="description" content="Python tooling caches add up fast — pip, conda, __pycache__ and the Hugging Face cache. Here's how to clear the safe ones and reclaim gigabytes on a data/ML Mac." />
+    <link rel="canonical" href="https://maccleaner.io/blog/python-cache-cleanup-mac.html" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Reclaim Disk from pip, conda and Python Caches on a Mac" />
+    <meta property="og:description" content="Python tooling caches add up fast — pip, conda, __pycache__ and the Hugging Face cache. Here's how to clear the safe ones and reclaim gigabytes on a data/ML Mac." />
+    <meta property="og:url" content="https://maccleaner.io/blog/python-cache-cleanup-mac.html" />
+    <meta property="og:image" content="https://maccleaner.io/blog/img/dev-c.jpg" />
+    <meta property="og:site_name" content="MacCleaner" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Reclaim Disk from pip, conda and Python Caches on a Mac" />
+    <meta name="twitter:description" content="Python tooling caches add up fast — pip, conda, __pycache__ and the Hugging Face cache. Here's how to clear the safe ones and reclaim gigabytes on a data/ML Mac." />
+    <meta name="twitter:image" content="https://maccleaner.io/blog/img/dev-c.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../blog.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNNJD0Q0RB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RNNJD0Q0RB");</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Reclaim Disk from pip, conda and Python Caches on a Mac", "description": "Python tooling caches add up fast — pip, conda, __pycache__ and the Hugging Face cache. Here's how to clear the safe ones and reclaim gigabytes on a data/ML Mac.", "image": "https://maccleaner.io/blog/img/dev-c.jpg", "datePublished": "2026-08-04", "dateModified": "2026-08-04", "author": {"@type": "Organization", "name": "MacCleaner", "url": "https://maccleaner.io/", "logo": "https://maccleaner.io/logo-mark.png"}, "publisher": {"@type": "Organization", "name": "MacCleaner", "url": "https://maccleaner.io/", "logo": "https://maccleaner.io/logo-mark.png"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://maccleaner.io/blog/python-cache-cleanup-mac.html"}, "inLanguage": "en"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://maccleaner.io/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://maccleaner.io/blog/"}, {"@type": "ListItem", "position": 3, "name": "Reclaim Disk from pip, conda and Python Caches on a Mac", "item": "https://maccleaner.io/blog/python-cache-cleanup-mac.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it safe to delete the pip cache?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. pip cache purge clears cached downloads that pip re-fetches when needed. Nothing installed breaks — only future installs use a little more bandwidth."}}, {"@type": "Question", "name": "Does conda clean --all break my environments?", "acceptedAnswer": {"@type": "Answer", "text": "No. It removes unused packages, tarballs and caches, not your active environments. It's the standard way to reclaim conda disk space."}}, {"@type": "Question", "name": "Can I delete __pycache__ folders?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — Python regenerates them automatically the next time it runs the code. They're pure cache."}}]}</script>
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <nav class="nav">
+      <a class="brand" href="../index.html">
+        <img src="../logo-mark.png" alt="MacCleaner logo" width="30" height="30" />
+        <div class="mark">MACCLEANER</div>
+      </a>
+      <div class="nav-center">
+        <a class="nav-link" href="../index.html#how">How it works</a>
+        <a class="nav-link" href="../index.html#clean">What it cleans</a>
+        <a class="nav-link" href="../index.html#pricing">Pricing</a>
+        <a class="nav-link" href="../blog/index.html">Blog</a>
+      </div>
+      <div class="nav-right">
+        <a class="bracket-btn" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.13/MacCleaner-0.1.13-universal.dmg"><span class="br">[</span> Download <span class="br">]</span></a>
+      </div>
+    </nav>
+    <div class="wrap">
+      <article class="article">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> / <a href="index.html">Blog</a> / <span>Reclaim Disk from pip, conda and Python Caches on a Mac</span>
+        </nav>
+        <h1>Reclaim Disk from pip, conda and Python Caches on a Mac</h1>
+        <p class="byline">MacCleaner · 2026-08-04 · 6 min read</p>
+        <img class="hero-img" src="img/dev-c.jpg" alt="Reclaim Disk from pip, conda and Python Caches on a Mac" width="1200" height="675" />
+        <div class="answer">
+          <span class="lbl">Short answer</span>
+          <p>Python tooling caches pile up fast: pip (~/Library/Caches/pip), conda's package cache, __pycache__ folders, and the Hugging Face cache for ML work. All are re-downloadable or regenerated, so they're safe to clear — pip cache purge, conda clean --all, and removing __pycache__ can reclaim gigabytes on a data or ML Mac.</p>
+        </div>
+        <h2>Where Python hides space</h2><table class="tbl"><tr><th>Source</th><th>Location</th><th>Clear with</th></tr><tr><td>pip cache</td><td><code>~/Library/Caches/pip</code></td><td><code>pip cache purge</code></td></tr><tr><td>conda packages</td><td><code>~/miniconda3/pkgs</code></td><td><code>conda clean --all</code></td></tr><tr><td>__pycache__</td><td>scattered in projects</td><td><code>find . -name __pycache__ -exec rm -rf {} +</code></td></tr><tr><td>Hugging Face</td><td><code>~/.cache/huggingface</code></td><td>see the AI-models guide</td></tr></table><h2>Clear the safe ones</h2><ul><li><code>pip cache purge</code> — wipes the wheel/download cache; re-downloads as needed.</li><li><code>conda clean --all</code> — removes unused packages, caches and tarballs.</li><li><code>__pycache__</code> folders regenerate on the next run — safe to delete.</li></ul><p>Doing ML work? The <a href="local-ai-models-disk-space-mac.html">Hugging Face cache</a> is usually the single biggest folder — tens of gigabytes — and all re-downloadable.</p><h2>The guided version</h2><p><a href="../index.html">MacCleaner</a> measures these Python and ML caches with real byte counts and marks them safe, so you can reclaim them without hunting across environments — recoverable until you empty. Pair with the <a href="best-mac-cleaner-for-developers-2026.html">developer cleanup guide</a> for the full sweep.</p>
+        <h2>Frequently asked questions</h2>
+        <div class="faq-q"><h3>Is it safe to delete the pip cache?</h3><p>Yes. pip cache purge clears cached downloads that pip re-fetches when needed. Nothing installed breaks — only future installs use a little more bandwidth.</p></div><div class="faq-q"><h3>Does conda clean --all break my environments?</h3><p>No. It removes unused packages, tarballs and caches, not your active environments. It's the standard way to reclaim conda disk space.</p></div><div class="faq-q"><h3>Can I delete __pycache__ folders?</h3><p>Yes — Python regenerates them automatically the next time it runs the code. They're pure cache.</p></div>
+        <div class="cta">
+          <h2>Reclaim the space in two taps</h2>
+          <p>MacCleaner scans read-only, shows every file before anything is touched, marks the safe groups, and lets you choose Trash or permanent. Free for up to 500 MB of cleanup a day.</p>
+          <a class="pill" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.13/MacCleaner-0.1.13-universal.dmg">Download for Mac</a>
+        </div>
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul><li><a href="local-ai-models-disk-space-mac.html">Local AI Models Eating Your Disk: Ollama, LM Studio (2026)</a></li><li><a href="node-modules-npm-cache-cleanup.html">node_modules and npm Cache: Reclaiming Developer Disk Space</a></li><li><a href="best-mac-cleaner-for-developers-2026.html">The Best Mac Cleaner for Developers in 2026</a></li></ul>
+        </div>
+      </article>
+    </div>
+    <footer class="foot">
+      <div class="wrap foot-row">
+        <span class="corner"><span class="sq"></span> © 2026 MacCleaner</span>
+        <span>Signed &amp; notarized · Universal · <span class="now">No ads · No tracking</span></span>
+      </div>
+    </footer>
+  </body>
+</html>

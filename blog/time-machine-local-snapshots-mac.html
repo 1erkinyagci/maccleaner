@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Delete Time Machine Local Snapshots on a Mac</title>
+    <meta name="description" content="Time Machine keeps hourly local snapshots on your internal disk. Here's what they are, how to view and thin them, and why macOS usually handles it for you." />
+    <link rel="canonical" href="https://maccleaner.io/blog/time-machine-local-snapshots-mac.html" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How to Delete Time Machine Local Snapshots on a Mac" />
+    <meta property="og:description" content="Time Machine keeps hourly local snapshots on your internal disk. Here's what they are, how to view and thin them, and why macOS usually handles it for you." />
+    <meta property="og:url" content="https://maccleaner.io/blog/time-machine-local-snapshots-mac.html" />
+    <meta property="og:image" content="https://maccleaner.io/blog/img/storage-c.jpg" />
+    <meta property="og:site_name" content="MacCleaner" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Delete Time Machine Local Snapshots on a Mac" />
+    <meta name="twitter:description" content="Time Machine keeps hourly local snapshots on your internal disk. Here's what they are, how to view and thin them, and why macOS usually handles it for you." />
+    <meta name="twitter:image" content="https://maccleaner.io/blog/img/storage-c.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../blog.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNNJD0Q0RB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RNNJD0Q0RB");</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Delete Time Machine Local Snapshots on a Mac", "description": "Time Machine keeps hourly local snapshots on your internal disk. Here's what they are, how to view and thin them, and why macOS usually handles it for you.", "image": "https://maccleaner.io/blog/img/storage-c.jpg", "datePublished": "2026-08-04", "dateModified": "2026-08-04", "author": {"@type": "Organization", "name": "MacCleaner", "url": "https://maccleaner.io/", "logo": "https://maccleaner.io/logo-mark.png"}, "publisher": {"@type": "Organization", "name": "MacCleaner", "url": "https://maccleaner.io/", "logo": "https://maccleaner.io/logo-mark.png"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://maccleaner.io/blog/time-machine-local-snapshots-mac.html"}, "inLanguage": "en"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://maccleaner.io/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://maccleaner.io/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to Delete Time Machine Local Snapshots on a Mac", "item": "https://maccleaner.io/blog/time-machine-local-snapshots-mac.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I delete Time Machine local snapshots?", "acceptedAnswer": {"@type": "Answer", "text": "List them with tmutil listlocalsnapshots / and thin with sudo tmutil thinlocalsnapshots. But macOS usually deletes them automatically when it needs space, so forcing it is rarely necessary."}}, {"@type": "Question", "name": "Are local snapshots safe to delete?", "acceptedAnswer": {"@type": "Answer", "text": "They're your short-term restore safety net. macOS thins them on its own when space is low, so it's best to let it manage them rather than forcing deletion."}}, {"@type": "Question", "name": "Why is Time Machine using space on my internal disk?", "acceptedAnswer": {"@type": "Answer", "text": "It keeps hourly local snapshots between external backups. That space is purgeable — macOS frees it automatically when you need it."}}]}</script>
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <nav class="nav">
+      <a class="brand" href="../index.html">
+        <img src="../logo-mark.png" alt="MacCleaner logo" width="30" height="30" />
+        <div class="mark">MACCLEANER</div>
+      </a>
+      <div class="nav-center">
+        <a class="nav-link" href="../index.html#how">How it works</a>
+        <a class="nav-link" href="../index.html#clean">What it cleans</a>
+        <a class="nav-link" href="../index.html#pricing">Pricing</a>
+        <a class="nav-link" href="../blog/index.html">Blog</a>
+      </div>
+      <div class="nav-right">
+        <a class="bracket-btn" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.13/MacCleaner-0.1.13-universal.dmg"><span class="br">[</span> Download <span class="br">]</span></a>
+      </div>
+    </nav>
+    <div class="wrap">
+      <article class="article">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> / <a href="index.html">Blog</a> / <span>How to Delete Time Machine Local Snapshots on a Mac</span>
+        </nav>
+        <h1>How to Delete Time Machine Local Snapshots on a Mac</h1>
+        <p class="byline">MacCleaner · 2026-08-04 · 5 min read</p>
+        <img class="hero-img" src="img/storage-c.jpg" alt="How to Delete Time Machine Local Snapshots on a Mac" width="1200" height="675" />
+        <div class="answer">
+          <span class="lbl">Short answer</span>
+          <p>Time Machine keeps hourly local snapshots on your internal drive; macOS reports them as “purgeable” and usually thins them automatically when it needs space. You can list them with tmutil listlocalsnapshots / and thin them with tmutil, but forcing deletion is rarely necessary — macOS frees them on demand. If your disk looks full from snapshots, that space is reclaimable when you actually need it.</p>
+        </div>
+        <h2>What local snapshots are</h2><p>Even between backups to an external drive, Time Machine saves hourly <strong>local snapshots</strong> on your internal disk so you can restore recent versions. They're counted as <a href="mac-storage-full-but-nothing-to-delete.html">purgeable space</a> — which is why your free space can look smaller than expected but jumps back when something needs the room.</p><h2>How to view and thin them</h2><ul><li>List them: <code>tmutil listlocalsnapshots /</code></li><li>Thin them (macOS chooses which): <code>sudo tmutil thinlocalsnapshots / 10000000000 4</code></li><li>Or just <strong>let macOS handle it</strong> — it deletes snapshots automatically when free space runs low.</li></ul><div class="note">You usually shouldn't force snapshot deletion. macOS manages them well, and they're your safety net for recent changes. Only thin them if you genuinely need space right now and nothing else is available.</div><h2>Where it fits in the bigger picture</h2><p>Snapshots are one slice of <a href="what-is-system-data-on-mac.html">System Data</a>. If that bucket looks huge, snapshots plus caches are usually why. <a href="../index.html">MacCleaner</a> shows what's genuinely reclaimable versus what macOS is managing for you, so you clear the caches and build junk and leave the snapshots alone.</p>
+        <h2>Frequently asked questions</h2>
+        <div class="faq-q"><h3>How do I delete Time Machine local snapshots?</h3><p>List them with tmutil listlocalsnapshots / and thin with sudo tmutil thinlocalsnapshots. But macOS usually deletes them automatically when it needs space, so forcing it is rarely necessary.</p></div><div class="faq-q"><h3>Are local snapshots safe to delete?</h3><p>They're your short-term restore safety net. macOS thins them on its own when space is low, so it's best to let it manage them rather than forcing deletion.</p></div><div class="faq-q"><h3>Why is Time Machine using space on my internal disk?</h3><p>It keeps hourly local snapshots between external backups. That space is purgeable — macOS frees it automatically when you need it.</p></div>
+        <div class="cta">
+          <h2>Reclaim the space in two taps</h2>
+          <p>MacCleaner scans read-only, shows every file before anything is touched, marks the safe groups, and lets you choose Trash or permanent. Free for up to 500 MB of cleanup a day.</p>
+          <a class="pill" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.13/MacCleaner-0.1.13-universal.dmg">Download for Mac</a>
+        </div>
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul><li><a href="what-is-system-data-on-mac.html">What Is “System Data” on a Mac — and How to Shrink It</a></li><li><a href="mac-storage-full-but-nothing-to-delete.html">Mac Storage Full but Nothing to Delete? Here's What's Hiding</a></li><li><a href="how-to-free-up-space-on-mac.html">How to Free Up Space on a Mac (2026 Guide)</a></li></ul>
+        </div>
+      </article>
+    </div>
+    <footer class="foot">
+      <div class="wrap foot-row">
+        <span class="corner"><span class="sq"></span> © 2026 MacCleaner</span>
+        <span>Signed &amp; notarized · Universal · <span class="now">No ads · No tracking</span></span>
+      </div>
+    </footer>
+  </body>
+</html>

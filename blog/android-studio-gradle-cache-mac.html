@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Android Studio & Gradle Are Eating Your Mac's Disk (2026)</title>
+    <meta name="description" content="Gradle caches, the Android SDK and emulator images routinely total 20–60 GB on a Mac. Here's what's safe to clear and how to reclaim the space." />
+    <link rel="canonical" href="https://maccleaner.io/blog/android-studio-gradle-cache-mac.html" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Android Studio & Gradle Are Eating Your Mac's Disk (2026)" />
+    <meta property="og:description" content="Gradle caches, the Android SDK and emulator images routinely total 20–60 GB on a Mac. Here's what's safe to clear and how to reclaim the space." />
+    <meta property="og:url" content="https://maccleaner.io/blog/android-studio-gradle-cache-mac.html" />
+    <meta property="og:image" content="https://maccleaner.io/blog/img/dev-d.jpg" />
+    <meta property="og:site_name" content="MacCleaner" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Android Studio & Gradle Are Eating Your Mac's Disk (2026)" />
+    <meta name="twitter:description" content="Gradle caches, the Android SDK and emulator images routinely total 20–60 GB on a Mac. Here's what's safe to clear and how to reclaim the space." />
+    <meta name="twitter:image" content="https://maccleaner.io/blog/img/dev-d.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../blog.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNNJD0Q0RB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RNNJD0Q0RB");</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Android Studio & Gradle Are Eating Your Mac's Disk (2026)", "description": "Gradle caches, the Android SDK and emulator images routinely total 20–60 GB on a Mac. Here's what's safe to clear and how to reclaim the space.", "image": "https://maccleaner.io/blog/img/dev-d.jpg", "datePublished": "2026-08-04", "dateModified": "2026-08-04", "author": {"@type": "Organization", "name": "MacCleaner", "url": "https://maccleaner.io/", "logo": "https://maccleaner.io/logo-mark.png"}, "publisher": {"@type": "Organization", "name": "MacCleaner", "url": "https://maccleaner.io/", "logo": "https://maccleaner.io/logo-mark.png"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://maccleaner.io/blog/android-studio-gradle-cache-mac.html"}, "inLanguage": "en"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://maccleaner.io/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://maccleaner.io/blog/"}, {"@type": "ListItem", "position": 3, "name": "Android Studio & Gradle Are Eating Your Mac's Disk (2026)", "item": "https://maccleaner.io/blog/android-studio-gradle-cache-mac.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it safe to delete the Gradle cache?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ~/.gradle/caches holds downloaded dependencies and build state that Gradle re-fetches and rebuilds. Your next build is just slower."}}, {"@type": "Question", "name": "How much space does Android Studio use on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "With Gradle caches, the SDK, system images and emulators, 20–60 GB is normal on an active machine — and most of it is rebuildable."}}, {"@type": "Question", "name": "Can I delete Android emulators to save space?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Each AVD is a multi-gigabyte disk image. Delete unused ones in the Device Manager; you can recreate them anytime."}}]}</script>
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <nav class="nav">
+      <a class="brand" href="../index.html">
+        <img src="../logo-mark.png" alt="MacCleaner logo" width="30" height="30" />
+        <div class="mark">MACCLEANER</div>
+      </a>
+      <div class="nav-center">
+        <a class="nav-link" href="../index.html#how">How it works</a>
+        <a class="nav-link" href="../index.html#clean">What it cleans</a>
+        <a class="nav-link" href="../index.html#pricing">Pricing</a>
+        <a class="nav-link" href="../blog/index.html">Blog</a>
+      </div>
+      <div class="nav-right">
+        <a class="bracket-btn" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.13/MacCleaner-0.1.13-universal.dmg"><span class="br">[</span> Download <span class="br">]</span></a>
+      </div>
+    </nav>
+    <div class="wrap">
+      <article class="article">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> / <a href="index.html">Blog</a> / <span>Android Studio & Gradle Are Eating Your Mac's Disk (2026)</span>
+        </nav>
+        <h1>Android Studio & Gradle Are Eating Your Mac's Disk (2026)</h1>
+        <p class="byline">MacCleaner · 2026-08-04 · 6 min read</p>
+        <img class="hero-img" src="img/dev-d.jpg" alt="Android Studio & Gradle Are Eating Your Mac's Disk (2026)" width="1200" height="675" />
+        <div class="answer">
+          <span class="lbl">Short answer</span>
+          <p>Android Studio and Gradle are among the heaviest disk users on a Mac: Gradle caches (~/.gradle/caches), the Android SDK and system images/AVDs (~/.android, ~/Library/Android), and per-project build folders routinely total 20–60 GB. Gradle caches, build folders and unused emulator images are rebuildable, so clearing the ones you don't need is safe.</p>
+        </div>
+        <h2>Where it hides</h2><table class="tbl"><tr><th>Source</th><th>Location</th><th>Safe to clear?</th></tr><tr><td>Gradle caches</td><td><code>~/.gradle/caches</code></td><td>Yes — re-downloaded</td></tr><tr><td>Android SDK &amp; system images</td><td><code>~/Library/Android/sdk</code></td><td>Unused API levels/images</td></tr><tr><td>Emulators (AVDs)</td><td><code>~/.android/avd</code></td><td>Yes — recreatable</td></tr><tr><td>Project build folders</td><td><code>app/build</code></td><td>Yes — rebuilt</td></tr></table><h2>What's safe to clear</h2><ul><li><strong>Gradle cache:</strong> <code>rm -rf ~/.gradle/caches</code> — rebuilds on your next build (biggest single win).</li><li><strong>Old system images / API levels</strong> you no longer target — remove them in the SDK Manager.</li><li><strong>Unused AVDs</strong> — each emulator device is a multi-GB disk image; delete the ones you don't use.</li><li><strong>Project <code>build/</code> folders</strong> — rebuilt automatically.</li></ul><div class="note">Keep the SDK platforms and build-tools you actively target — those re-download slowly. Everything else here rebuilds cheaply.</div><h2>Sweep it with the rest</h2><p>Android tooling sits alongside the usual dev pile. <a href="../index.html">MacCleaner</a> surfaces Gradle and emulator storage with real sizes next to <a href="xcode-derived-data-cleanup.html">Xcode</a>, <a href="docker-orbstack-disk-space-mac.html">Docker</a> and <a href="homebrew-cleanup-mac.html">Homebrew</a> — reclaim the whole thing in one pass, recoverable until you empty.</p>
+        <h2>Frequently asked questions</h2>
+        <div class="faq-q"><h3>Is it safe to delete the Gradle cache?</h3><p>Yes. ~/.gradle/caches holds downloaded dependencies and build state that Gradle re-fetches and rebuilds. Your next build is just slower.</p></div><div class="faq-q"><h3>How much space does Android Studio use on a Mac?</h3><p>With Gradle caches, the SDK, system images and emulators, 20–60 GB is normal on an active machine — and most of it is rebuildable.</p></div><div class="faq-q"><h3>Can I delete Android emulators to save space?</h3><p>Yes. Each AVD is a multi-gigabyte disk image. Delete unused ones in the Device Manager; you can recreate them anytime.</p></div>
+        <div class="cta">
+          <h2>Reclaim the space in two taps</h2>
+          <p>MacCleaner scans read-only, shows every file before anything is touched, marks the safe groups, and lets you choose Trash or permanent. Free for up to 500 MB of cleanup a day.</p>
+          <a class="pill" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.13/MacCleaner-0.1.13-universal.dmg">Download for Mac</a>
+        </div>
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul><li><a href="xcode-derived-data-cleanup.html">Xcode Is Eating Your Disk: DerivedData, Archives and Simulators</a></li><li><a href="docker-orbstack-disk-space-mac.html">Docker and OrbStack Disk Bloat on a Mac (2026 Cleanup Guide)</a></li><li><a href="best-mac-cleaner-for-developers-2026.html">The Best Mac Cleaner for Developers in 2026</a></li></ul>
+        </div>
+      </article>
+    </div>
+    <footer class="foot">
+      <div class="wrap foot-row">
+        <span class="corner"><span class="sq"></span> © 2026 MacCleaner</span>
+        <span>Signed &amp; notarized · Universal · <span class="now">No ads · No tracking</span></span>
+      </div>
+    </footer>
+  </body>
+</html>

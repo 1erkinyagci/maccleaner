@@ -1,133 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://maccleaner.io/</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://maccleaner.io/blog/</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/best-mac-cleaner-2026.html</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://maccleaner.io/blog/mac-startup-disk-full.html</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/best-free-mac-cleaner-2026.html</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://maccleaner.io/blog/clean-macbook-before-selling.html</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/best-mac-cleaner-for-developers-2026.html</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://maccleaner.io/blog/macbook-air-storage-full.html</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/maccleaner-vs-cleanmymac.html</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://maccleaner.io/blog/how-to-find-large-files-on-mac.html</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/maccleaner-vs-daisydisk.html</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://maccleaner.io/blog/time-machine-local-snapshots-mac.html</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/apple-intelligence-storage-mac.html</loc>
+    <loc>https://maccleaner.io/blog/homebrew-cleanup-mac.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/python-cache-cleanup-mac.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/android-studio-gradle-cache-mac.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/mac-disk-space-analyzer.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/mac-cleanup-checklist-2026.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/256gb-macbook-storage-2026.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/local-ai-models-disk-space-mac.html</loc>
+    <loc>https://maccleaner.io/blog/apple-intelligence-storage-mac.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/macos-tahoe-storage-guide.html</loc>
+    <loc>https://maccleaner.io/blog/best-free-mac-cleaner-2026.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/best-mac-cleaner-2026.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/best-mac-cleaner-for-developers-2026.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/cleanmymac-alternative.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/docker-orbstack-disk-space-mac.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/docker-orbstack-disk-space-mac.html</loc>
+    <loc>https://maccleaner.io/blog/free-up-space-without-deleting-files.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/how-to-clear-cache-on-mac.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/how-to-empty-trash-on-mac.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/how-to-free-up-space-on-mac.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/is-mac-cleaning-software-safe.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/local-ai-models-disk-space-mac.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/256gb-macbook-storage-2026.html</loc>
+    <loc>https://maccleaner.io/blog/mac-storage-full-but-nothing-to-delete.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/maccleaner-vs-cleanmymac.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/maccleaner-vs-daisydisk.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maccleaner.io/blog/macos-tahoe-storage-guide.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/how-to-free-up-space-on-mac.html</loc>
+    <loc>https://maccleaner.io/blog/node-modules-npm-cache-cleanup.html</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/mac-storage-full-but-nothing-to-delete.html</loc>
+    <loc>https://maccleaner.io/blog/what-is-system-data-on-mac.html</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/what-is-system-data-on-mac.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/how-to-clear-cache-on-mac.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/how-to-empty-trash-on-mac.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/xcode-derived-data-cleanup.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/node-modules-npm-cache-cleanup.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/is-mac-cleaning-software-safe.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/free-up-space-without-deleting-files.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://1erkinyagci.github.io/maccleaner/blog/cleanmymac-alternative.html</loc>
+    <loc>https://maccleaner.io/blog/xcode-derived-data-cleanup.html</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
