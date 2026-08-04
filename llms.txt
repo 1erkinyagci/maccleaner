@@ -11,32 +11,64 @@
 - Platform: macOS (universal — Apple Silicon and Intel). Download: https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.13/MacCleaner-0.1.13-universal.dmg
 - Flow: Scan (read-only) -> Preview every item -> Clean (Move to Trash or Delete permanently)
 - Classifies findings as "safe to remove" (rebuildable: caches, build artifacts, package
-  caches) or "needs review" (personal: downloads, large files, archives). Personal files are
-  never pre-selected.
-- Reads real byte counts with du-style, APFS-clone-aware accounting — sizes are measured.
-- Requires Full Disk Access to measure and empty the macOS Trash.
+  caches) or "needs review" (personal). Personal files are never pre-selected.
+- Sign-in is passwordless: a 6-digit emailed code, so there is no password to reset.
+- Subscriptions are self-service via the Stripe billing portal (link in the site footer).
+
+## Q&A
+- **How do I free up space on a Mac?** Clear rebuildable files first — app caches, logs, the Trash, and on developer Macs build artifacts like Xcode DerivedData, node_modules and Docker images. Then review large personal files and offload media to iCloud or an external SSD. Rebuildable files regenerate, so clearing them costs nothing but time.
+- **What is System Data on a Mac?** System Data (formerly "Other") is macOS's catch-all for files it can't sort into Apps, Photos or Documents: caches, logs, APFS snapshots, disk images, fonts, plugins and developer build artifacts. The safely reclaimable parts are app caches, logs and developer artifacts.
+- **Why is my Mac full when my files are small?** Because caches, snapshots, purgeable space and developer build artifacts don't appear in Finder. On many Macs they account for tens of gigabytes.
+- **Does moving files to the Trash free up space?** No. Files stay on disk until you empty the Trash. Only emptying reclaims the space.
+- **Is it safe to delete cache files on a Mac?** Yes. Files in ~/Library/Caches are temporary by design and apps rebuild them automatically. Quit the app first and delete the contents of its cache folder, not the folder itself.
+- **Is it safe to delete Xcode DerivedData?** Yes. It's build output and indexes that Xcode regenerates. Your next build is simply slower.
+- **Is it safe to delete node_modules?** Yes, if your lockfile is committed — npm ci or an equivalent install rebuilds it identically.
+- **How much space does Apple Intelligence use on a Mac?** Typically around 7GB for the on-device models in 2026, more with extra languages. Turning Apple Intelligence off in System Settings removes them.
+- **How much free space should a Mac have?** Keep at least 10–15% of the drive free so macOS has room for swap, caches and updates.
+- **How much free space does a macOS update need?** Often 20GB or more for the download plus installation. Clearing caches, the Trash and developer artifacts usually frees enough.
+- **What is purgeable space on a Mac?** Data — mostly APFS snapshots and caches — that macOS deletes automatically when it needs room. You generally shouldn't force it.
+- **Can MacCleaner delete files permanently?** Yes, but only when you choose to. By default cleanups go to a recoverable holding area, and you can restore any item until you empty it.
+- **Does MacCleaner delete anything automatically?** No. Every cleanup is scan, review, confirm. Personal files are never pre-selected.
+- **Is MacCleaner free?** There's a free tier with unlimited read-only scans and up to 500MB of cleanup per day. Pro removes the daily cap at $4.99/month, $19.99/year or $29.99 once.
+- **Does MacCleaner work offline?** Yes. Scanning is local-first and runs entirely on your Mac. There are no ads and no tracking.
+- **Why does a Mac cleaner need Full Disk Access?** macOS blocks apps from reading protected locations such as ~/.Trash without it, so those areas can't be measured or emptied. A trustworthy app explains this and still works honestly if you decline.
+- **Is MacCleaner safe?** It scans read-only, shows every file before anything is touched, classifies findings as safe-to-remove or needs-review, never pre-selects personal files, and is signed and notarized by Apple.
+- **Does MacCleaner remove malware?** No. It's a storage tool only — it finds and cleans disk space you can safely recover.
+- **What's the difference between MacCleaner and CleanMyMac?** CleanMyMac is an all-in-one paid maintenance suite including malware scanning and an uninstaller. MacCleaner is a focused storage cleaner with read-only scans, review-before-delete and a free tier.
+- **How do I cancel a MacCleaner subscription?** Use the Manage subscription link in the site footer or on the post-checkout page — it opens Stripe's billing portal, where you can update your card or cancel.
+- **How do I sign in to MacCleaner?** Enter your email in the app and it sends a 6-digit code. Enter the code to sign in — there's no password to remember or reset.
 
 ## Guides
+- [MacBook Neo Storage: How Much Do You Need? (2026)](https://maccleaner.io/blog/macbook-neo-storage.html): Buying a MacBook Neo in 2026? Here's how much storage you actually need, what macOS and Apple Intelligence take first, and how to live with the base tier.
+- [Mac Freezing or Crashing After Cleaning Storage? Here's Why](https://maccleaner.io/blog/mac-slow-after-cleaning-storage.html): Cleaned up your Mac and now it freezes, crashes or apps misbehave? Here's what usually went wrong, how to fix it, and what's actually safe to delete.
+- [Mac Cleaner Without a Subscription: One-Time & Free Options](https://maccleaner.io/blog/mac-cleaner-no-subscription.html): Tired of monthly fees for a disk cleaner? Here are the genuinely subscription-free ways to clean a Mac in 2026 — free tools, one-time purchases and manual methods.
+- [How to Vet a Mac App Before You Install It (2026 Checklist)](https://maccleaner.io/blog/mac-app-privacy-checklist.html): With AI-generated apps flooding the Mac scene in 2026, here's a practical checklist for vetting any Mac app: privacy policy, notarization, permissions and telemetry.
+- [How to Find and Remove Duplicate Files on a Mac](https://maccleaner.io/blog/find-duplicate-files-mac.html): Duplicate photos, downloads and documents quietly eat gigabytes. Here's how to find duplicates on a Mac safely — with Finder, Photos and Terminal.
+- [How to Move Your Photos Library to an External Drive (Mac)](https://maccleaner.io/blog/move-photos-library-external-drive.html): Your Photos library is probably the biggest thing on your Mac. Here's how to move it to an external SSD safely — and the pitfalls to avoid.
+- [Mac Storage Not Updating After Deleting Files? Here's Why](https://maccleaner.io/blog/macos-storage-not-updating.html): Deleted gigabytes but the storage bar hasn't moved? Here's why macOS reports stale numbers, and how to make free space show up correctly.
+- [macOS Tahoe vs Sequoia: Storage Differences (2026)](https://maccleaner.io/blog/macos-tahoe-vs-sequoia-storage.html): Should you upgrade to macOS Tahoe, and what does it mean for disk space? Here's what changed for storage between Sequoia and Tahoe in 2026.
+- [What Reddit Actually Recommends for Mac Cleanup (2026)](https://maccleaner.io/blog/best-mac-cleaner-reddit.html): Reddit's Mac communities are split on cleaner apps. Here's what they actually recommend in 2026 — the manual methods, the trusted tools, and the red flags.
+- [Mac Mini Storage in 2026: How Much Do You Need?](https://maccleaner.io/blog/mac-mini-storage-2026.html): Mac mini configurations shifted in 2026. Here's how much storage to buy, what macOS takes first, and how to expand cheaply with external drives.
 - [256GB vs 512GB MacBook: How Much Storage Do You Need? (2026)](https://maccleaner.io/blog/256gb-vs-512gb-mac.html): Deciding between 256GB and 512GB — or stuck with a full 256GB Mac? Here's how much storage you actually need in 2026, and how to make 256GB work.
-- [How to Clear Safari Cache & Website Data on a Mac](https://maccleaner.io/blog/clear-safari-cache-mac.html): Clear Safari's cache and website data to fix glitches and free space on a Mac. Here's the safe way — and what you'll lose (almost nothing).
-- [Spotlight Indexing Eating Disk or CPU on a Mac? How to Fix It](https://maccleaner.io/blog/spotlight-indexing-mac.html): Spotlight (mds, mds_stores) can spike CPU and disk after an update. Here's why it happens, how to check it, and how to safely rebuild the index.
-- [Messages Taking Up Space on a Mac? Clear iMessage Attachments](https://maccleaner.io/blog/messages-storage-mac.html): iMessage saves every photo, video and GIF you've ever received. Here's how to find and clear Messages attachments and free real space on a Mac.
-- [Photos Library Taking Up Space on a Mac: What to Do](https://maccleaner.io/blog/photos-library-storage-mac.html): Your Photos library is often the biggest thing on your Mac. Here's how to shrink its footprint honestly — with iCloud, offloading and cache cleanup.
-- [Final Cut & DaVinci Resolve Eating Your Mac's Disk (2026)](https://maccleaner.io/blog/final-cut-davinci-cache-mac.html): Render files, optimized media and caches from Final Cut and DaVinci Resolve can total hundreds of gigabytes. Here's what's safe to delete and reclaim.
 - [Clear Adobe Cache (Photoshop, Premiere, Lightroom) on a Mac](https://maccleaner.io/blog/adobe-cache-mac.html): Adobe apps hoard media caches, previews and temp files — often tens of gigabytes. Here's how to clear them safely and free space on a Mac.
-- [VS Code & Cursor Disk Usage on a Mac: Cache & Extensions](https://maccleaner.io/blog/vscode-cursor-storage-mac.html): VS Code and Cursor accumulate caches, logs, extensions and workspace storage. Here's what's safe to clear to reclaim space on a developer Mac.
-- [What Is “Other” Storage on a Mac — and How to Clear It](https://maccleaner.io/blog/mac-other-storage.html): “Other” storage (now called System Data) can swallow 50GB or more. Here's exactly what's in it and which parts you can safely clear on a Mac.
-- [Mac Won't Update Because Storage Is Full? How to Fix It Fast](https://maccleaner.io/blog/mac-wont-update-storage.html): macOS needs 20GB+ free to install an update. Here's how to free enough space fast so your Mac can update — without deleting anything important.
 - [Android Studio & Gradle Are Eating Your Mac's Disk (2026)](https://maccleaner.io/blog/android-studio-gradle-cache-mac.html): Gradle caches, the Android SDK and emulator images routinely total 20–60 GB on a Mac. Here's what's safe to clear and how to reclaim the space.
 - [How to Wipe & Clean a MacBook Before Selling (2026)](https://maccleaner.io/blog/clean-macbook-before-selling.html): Selling your MacBook? Here's the safe order: sign out of your accounts, back up, then Erase All Content and Settings — plus how to clear it out if you're keeping it.
+- [How to Clear Safari Cache & Website Data on a Mac](https://maccleaner.io/blog/clear-safari-cache-mac.html): Clear Safari's cache and website data to fix glitches and free space on a Mac. Here's the safe way — and what you'll lose (almost nothing).
+- [Final Cut & DaVinci Resolve Eating Your Mac's Disk (2026)](https://maccleaner.io/blog/final-cut-davinci-cache-mac.html): Render files, optimized media and caches from Final Cut and DaVinci Resolve can total hundreds of gigabytes. Here's what's safe to delete and reclaim.
 - [How to Clean Up Homebrew and Free Space on a Mac](https://maccleaner.io/blog/homebrew-cleanup-mac.html): Homebrew quietly hoards old versions and cached downloads. Here's how to reclaim the space with brew cleanup — and how much you'll typically get back.
 - [How to Find and Delete Large Files on a Mac (2026)](https://maccleaner.io/blog/how-to-find-large-files-on-mac.html): Three ways to find the biggest files on your Mac — Finder, the Storage settings, and Terminal — plus the missing piece: knowing which ones are safe to delete.
 - [The Complete Mac Storage Cleanup Checklist (2026)](https://maccleaner.io/blog/mac-cleanup-checklist-2026.html): A step-by-step Mac cleanup in order of safest-and-biggest wins — caches, Trash, developer junk, snapshots, then personal files. Everything before “review” is safe.
 - [The Best Way to See What's Taking Up Space on a Mac (2026)](https://maccleaner.io/blog/mac-disk-space-analyzer.html): macOS hides most of your storage in “System Data.” Here's how to actually see what's taking up space — and, crucially, what you can safely reclaim.
+- [What Is “Other” Storage on a Mac — and How to Clear It](https://maccleaner.io/blog/mac-other-storage.html): “Other” storage (now called System Data) can swallow 50GB or more. Here's exactly what's in it and which parts you can safely clear on a Mac.
 - [Startup Disk Almost Full on Mac? How to Fix It Fast (2026)](https://maccleaner.io/blog/mac-startup-disk-full.html): Got the “Your startup disk is almost full” warning? Here's how to reclaim gigabytes fast and safely — caches, Trash, developer junk — and stop it coming back.
+- [Mac Won't Update Because Storage Is Full? How to Fix It Fast](https://maccleaner.io/blog/mac-wont-update-storage.html): macOS needs 20GB+ free to install an update. Here's how to free enough space fast so your Mac can update — without deleting anything important.
 - [MacBook Air Storage Full? How to Free Space (2026)](https://maccleaner.io/blog/macbook-air-storage-full.html): A 256 GB MacBook Air fills fast — macOS and Apple Intelligence alone take 20–30 GB. Here's how to reclaim space safely and keep it from filling again.
+- [Messages Taking Up Space on a Mac? Clear iMessage Attachments](https://maccleaner.io/blog/messages-storage-mac.html): iMessage saves every photo, video and GIF you've ever received. Here's how to find and clear Messages attachments and free real space on a Mac.
+- [Photos Library Taking Up Space on a Mac: What to Do](https://maccleaner.io/blog/photos-library-storage-mac.html): Your Photos library is often the biggest thing on your Mac. Here's how to shrink its footprint honestly — with iCloud, offloading and cache cleanup.
 - [Reclaim Disk from pip, conda and Python Caches on a Mac](https://maccleaner.io/blog/python-cache-cleanup-mac.html): Python tooling caches add up fast — pip, conda, __pycache__ and the Hugging Face cache. Here's how to clear the safe ones and reclaim gigabytes on a data/ML Mac.
+- [Spotlight Indexing Eating Disk or CPU on a Mac? How to Fix It](https://maccleaner.io/blog/spotlight-indexing-mac.html): Spotlight (mds, mds_stores) can spike CPU and disk after an update. Here's why it happens, how to check it, and how to safely rebuild the index.
 - [How to Delete Time Machine Local Snapshots on a Mac](https://maccleaner.io/blog/time-machine-local-snapshots-mac.html): Time Machine keeps hourly local snapshots on your internal disk. Here's what they are, how to view and thin them, and why macOS usually handles it for you.
+- [VS Code & Cursor Disk Usage on a Mac: Cache & Extensions](https://maccleaner.io/blog/vscode-cursor-storage-mac.html): VS Code and Cursor accumulate caches, logs, extensions and workspace storage. Here's what's safe to clear to reclaim space on a developer Mac.
 - [The Best Free Mac Cleaner in 2026](https://maccleaner.io/blog/best-free-mac-cleaner-2026.html): The genuinely free ways to reclaim disk space on a Mac in 2026 — what each covers, where the limits are, and when free is all you actually need.
 - [The Best Mac Cleaner Apps in 2026](https://maccleaner.io/blog/best-mac-cleaner-2026.html): An honest, category-by-category look at the best ways to reclaim disk space on a Mac in 2026 — from free manual methods to focused tools and full suites.
 - [The Best Mac Cleaner for Developers in 2026](https://maccleaner.io/blog/best-mac-cleaner-for-developers-2026.html): Developer Macs fill up fastest. The best 2026 approaches to reclaim the tens of gigabytes hiding in Xcode, node_modules, Docker and local AI models.
@@ -60,4 +92,5 @@
 
 ## Pages
 - [Home](https://maccleaner.io/): product overview, what it cleans, pricing, FAQ
+- [FAQ](https://maccleaner.io/faq.html): short answers to common Mac storage questions
 - [Blog](https://maccleaner.io/blog/): guides to Mac storage
