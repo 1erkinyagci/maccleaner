@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spotlight Indexing Eating Disk or CPU on a Mac? How to Fix It</title>
+    <meta name="description" content="Spotlight (mds, mds_stores) can spike CPU and disk after an update. Here's why it happens, how to check it, and how to safely rebuild the index." />
+    <link rel="canonical" href="https://maccleaner.io/blog/spotlight-indexing-mac.html" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Spotlight Indexing Eating Disk or CPU on a Mac? How to Fix It" />
+    <meta property="og:description" content="Spotlight (mds, mds_stores) can spike CPU and disk after an update. Here's why it happens, how to check it, and how to safely rebuild the index." />
+    <meta property="og:url" content="https://maccleaner.io/blog/spotlight-indexing-mac.html" />
+    <meta property="og:image" content="https://maccleaner.io/blog/img/dev-b.jpg" />
+    <meta property="og:site_name" content="MacCleaner" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Spotlight Indexing Eating Disk or CPU on a Mac? How to Fix It" />
+    <meta name="twitter:description" content="Spotlight (mds, mds_stores) can spike CPU and disk after an update. Here's why it happens, how to check it, and how to safely rebuild the index." />
+    <meta name="twitter:image" content="https://maccleaner.io/blog/img/dev-b.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../blog.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNNJD0Q0RB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RNNJD0Q0RB");</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Spotlight Indexing Eating Disk or CPU on a Mac? How to Fix It", "description": "Spotlight (mds, mds_stores) can spike CPU and disk after an update. Here's why it happens, how to check it, and how to safely rebuild the index.", "image": "https://maccleaner.io/blog/img/dev-b.jpg", "datePublished": "2026-08-04", "dateModified": "2026-08-04", "author": {"@type": "Organization", "name": "MacCleaner", "url": "https://maccleaner.io/", "logo": "https://maccleaner.io/logo-mark.png"}, "publisher": {"@type": "Organization", "name": "MacCleaner", "url": "https://maccleaner.io/", "logo": "https://maccleaner.io/logo-mark.png"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://maccleaner.io/blog/spotlight-indexing-mac.html"}, "inLanguage": "en"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://maccleaner.io/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://maccleaner.io/blog/"}, {"@type": "ListItem", "position": 3, "name": "Spotlight Indexing Eating Disk or CPU on a Mac? How to Fix It", "item": "https://maccleaner.io/blog/spotlight-indexing-mac.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is mds_stores using so much CPU on my Mac?", "acceptedAnswer": {"@type": "Answer", "text": "It's Spotlight re-indexing your files, usually after a macOS update or big file change. It's temporary — let it finish, ideally on power. If it runs for many hours, rebuild the index."}}, {"@type": "Question", "name": "How do I rebuild the Spotlight index?", "acceptedAnswer": {"@type": "Answer", "text": "Add then remove your drive in System Settings → Spotlight → Search Privacy, or run sudo mdutil -E / in Terminal. Both force a clean rebuild."}}, {"@type": "Question", "name": "Is it safe to delete the Spotlight index?", "acceptedAnswer": {"@type": "Answer", "text": "You don't need to — rebuilding recreates it. Deleting it only forces a re-index, which spikes CPU and disk again. It's not a way to free lasting space."}}]}</script>
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <nav class="nav">
+      <a class="brand" href="../index.html">
+        <img src="../logo-mark.png" alt="MacCleaner logo" width="30" height="30" />
+        <div class="mark">MACCLEANER</div>
+      </a>
+      <div class="nav-center">
+        <a class="nav-link" href="../index.html#how">How it works</a>
+        <a class="nav-link" href="../index.html#clean">What it cleans</a>
+        <a class="nav-link" href="../index.html#pricing">Pricing</a>
+        <a class="nav-link" href="../blog/index.html">Blog</a>
+      </div>
+      <div class="nav-right">
+        <a class="bracket-btn" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.13/MacCleaner-0.1.13-universal.dmg"><span class="br">[</span> Download <span class="br">]</span></a>
+      </div>
+    </nav>
+    <div class="wrap">
+      <article class="article">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> / <a href="index.html">Blog</a> / <span>Spotlight Indexing Eating Disk or CPU on a Mac? How to Fix It</span>
+        </nav>
+        <h1>Spotlight Indexing Eating Disk or CPU on a Mac? How to Fix It</h1>
+        <p class="byline">MacCleaner · 2026-08-04 · 6 min read</p>
+        <img class="hero-img" src="img/dev-b.jpg" alt="Spotlight Indexing Eating Disk or CPU on a Mac? How to Fix It" width="1200" height="675" />
+        <div class="answer">
+          <span class="lbl">Short answer</span>
+          <p>Spotlight rebuilds its search index — the mds and mds_stores processes — after macOS updates, large file changes or migrations, spiking CPU and disk until it finishes. It usually completes on its own within an hour or two. If it's stuck, rebuild the index by adding then removing your drive in Spotlight's Privacy settings, or with mdutil. The index itself is counted under System Data.</p>
+        </div>
+        <h2>Why Spotlight spikes</h2><p>Those <code>mds</code> and <code>mds_stores</code> processes hammering your CPU and disk are Spotlight re-indexing your files so search stays instant. It's triggered by macOS updates, big file operations, or restoring from a backup — and it's temporary. First step: <strong>let it finish</strong>, ideally plugged in.</p><h2>Force a rebuild if it's stuck</h2><ul><li><strong>Via Settings:</strong> System Settings → Spotlight → Search Privacy → add your drive, then remove it. This forces a fresh index.</li><li><strong>Via Terminal:</strong> <code>sudo mdutil -E /</code> erases and rebuilds the index for the drive.</li><li>Check status: <code>mdutil -s /</code></li></ul><div class="note">A rebuild spikes CPU/disk again while it runs, then settles — only do it if indexing is genuinely stuck for hours.</div><h2>Where the index lives</h2><p>The Spotlight index sits in your drive's hidden <code>.Spotlight-V100</code> and is counted under <a href="what-is-system-data-on-mac.html">System Data</a>. It's not something to delete for space — it rebuilds. If System Data looks huge, the real reclaimable wins are caches and developer junk; <a href="../index.html">MacCleaner</a> shows which is which.</p>
+        <h2>Frequently asked questions</h2>
+        <div class="faq-q"><h3>Why is mds_stores using so much CPU on my Mac?</h3><p>It's Spotlight re-indexing your files, usually after a macOS update or big file change. It's temporary — let it finish, ideally on power. If it runs for many hours, rebuild the index.</p></div><div class="faq-q"><h3>How do I rebuild the Spotlight index?</h3><p>Add then remove your drive in System Settings → Spotlight → Search Privacy, or run sudo mdutil -E / in Terminal. Both force a clean rebuild.</p></div><div class="faq-q"><h3>Is it safe to delete the Spotlight index?</h3><p>You don't need to — rebuilding recreates it. Deleting it only forces a re-index, which spikes CPU and disk again. It's not a way to free lasting space.</p></div>
+        <div class="cta">
+          <h2>Reclaim the space in two taps</h2>
+          <p>MacCleaner scans read-only, shows every file before anything is touched, marks the safe groups, and lets you choose Trash or permanent. Free for up to 500 MB of cleanup a day.</p>
+          <a class="pill" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.13/MacCleaner-0.1.13-universal.dmg">Download for Mac</a>
+        </div>
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul><li><a href="what-is-system-data-on-mac.html">What Is “System Data” on a Mac — and How to Shrink It</a></li><li><a href="mac-storage-full-but-nothing-to-delete.html">Mac Storage Full but Nothing to Delete? Here's What's Hiding</a></li><li><a href="how-to-free-up-space-on-mac.html">How to Free Up Space on a Mac (2026 Guide)</a></li></ul>
+        </div>
+      </article>
+    </div>
+    <footer class="foot">
+      <div class="wrap foot-row">
+        <span class="corner"><span class="sq"></span> © 2026 MacCleaner</span>
+        <span>Signed &amp; notarized · Universal · <span class="now">No ads · No tracking</span></span>
+      </div>
+    </footer>
+  </body>
+</html>

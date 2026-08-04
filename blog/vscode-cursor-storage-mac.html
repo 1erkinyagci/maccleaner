@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VS Code & Cursor Disk Usage on a Mac: Cache & Extensions</title>
+    <meta name="description" content="VS Code and Cursor accumulate caches, logs, extensions and workspace storage. Here's what's safe to clear to reclaim space on a developer Mac." />
+    <link rel="canonical" href="https://maccleaner.io/blog/vscode-cursor-storage-mac.html" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="VS Code & Cursor Disk Usage on a Mac: Cache & Extensions" />
+    <meta property="og:description" content="VS Code and Cursor accumulate caches, logs, extensions and workspace storage. Here's what's safe to clear to reclaim space on a developer Mac." />
+    <meta property="og:url" content="https://maccleaner.io/blog/vscode-cursor-storage-mac.html" />
+    <meta property="og:image" content="https://maccleaner.io/blog/img/dev-a.jpg" />
+    <meta property="og:site_name" content="MacCleaner" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VS Code & Cursor Disk Usage on a Mac: Cache & Extensions" />
+    <meta name="twitter:description" content="VS Code and Cursor accumulate caches, logs, extensions and workspace storage. Here's what's safe to clear to reclaim space on a developer Mac." />
+    <meta name="twitter:image" content="https://maccleaner.io/blog/img/dev-a.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../blog.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNNJD0Q0RB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RNNJD0Q0RB");</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "VS Code & Cursor Disk Usage on a Mac: Cache & Extensions", "description": "VS Code and Cursor accumulate caches, logs, extensions and workspace storage. Here's what's safe to clear to reclaim space on a developer Mac.", "image": "https://maccleaner.io/blog/img/dev-a.jpg", "datePublished": "2026-08-04", "dateModified": "2026-08-04", "author": {"@type": "Organization", "name": "MacCleaner", "url": "https://maccleaner.io/", "logo": "https://maccleaner.io/logo-mark.png"}, "publisher": {"@type": "Organization", "name": "MacCleaner", "url": "https://maccleaner.io/", "logo": "https://maccleaner.io/logo-mark.png"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://maccleaner.io/blog/vscode-cursor-storage-mac.html"}, "inLanguage": "en"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://maccleaner.io/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://maccleaner.io/blog/"}, {"@type": "ListItem", "position": 3, "name": "VS Code & Cursor Disk Usage on a Mac: Cache & Extensions", "item": "https://maccleaner.io/blog/vscode-cursor-storage-mac.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it safe to delete VS Code cache?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Caches, logs and old workspaceStorage regenerate or are stale. Extensions re-download. Your settings.json and keybindings.json are separate and untouched."}}, {"@type": "Question", "name": "Where does Cursor store its data on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Like VS Code: ~/Library/Application Support/Cursor (caches, logs, workspace storage) and ~/.cursor/extensions. The same clean-up spots apply."}}, {"@type": "Question", "name": "How much space do VS Code and Cursor use?", "acceptedAnswer": {"@type": "Answer", "text": "With many projects, caches, logs, workspace storage and extensions add up to several gigabytes on an active developer Mac."}}]}</script>
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <nav class="nav">
+      <a class="brand" href="../index.html">
+        <img src="../logo-mark.png" alt="MacCleaner logo" width="30" height="30" />
+        <div class="mark">MACCLEANER</div>
+      </a>
+      <div class="nav-center">
+        <a class="nav-link" href="../index.html#how">How it works</a>
+        <a class="nav-link" href="../index.html#clean">What it cleans</a>
+        <a class="nav-link" href="../index.html#pricing">Pricing</a>
+        <a class="nav-link" href="../blog/index.html">Blog</a>
+      </div>
+      <div class="nav-right">
+        <a class="bracket-btn" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.13/MacCleaner-0.1.13-universal.dmg"><span class="br">[</span> Download <span class="br">]</span></a>
+      </div>
+    </nav>
+    <div class="wrap">
+      <article class="article">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> / <a href="index.html">Blog</a> / <span>VS Code & Cursor Disk Usage on a Mac: Cache & Extensions</span>
+        </nav>
+        <h1>VS Code & Cursor Disk Usage on a Mac: Cache & Extensions</h1>
+        <p class="byline">MacCleaner · 2026-08-04 · 5 min read</p>
+        <img class="hero-img" src="img/dev-a.jpg" alt="VS Code & Cursor Disk Usage on a Mac: Cache & Extensions" width="1200" height="675" />
+        <div class="answer">
+          <span class="lbl">Short answer</span>
+          <p>VS Code and Cursor store caches, logs, extensions and per-workspace data under ~/Library/Application Support (Code / Cursor) and ~/.vscode / ~/.cursor. Caches, logs and old workspace storage are safe to clear, and extensions re-download. On a busy dev Mac with many projects this adds up to several gigabytes.</p>
+        </div>
+        <h2>Where it lives</h2><table class="tbl"><tr><th>What</th><th>Location</th><th>Safe?</th></tr><tr><td>Caches &amp; logs</td><td><code>~/Library/Application Support/Code/{Cache,logs}</code></td><td>Yes</td></tr><tr><td>Workspace storage</td><td><code>.../User/workspaceStorage</code></td><td>Yes — old ones</td></tr><tr><td>Extensions</td><td><code>~/.vscode/extensions</code>, <code>~/.cursor/extensions</code></td><td>Re-download</td></tr></table><p>Cursor mirrors VS Code's layout, so both share the same clean-up spots.</p><h2>What's safe to clear</h2><ul><li><strong>Cache and logs</strong> — regenerated on next launch.</li><li><strong>Old <code>workspaceStorage</code></strong> folders for projects you've deleted — stale state.</li><li><strong>Unused extensions</strong> — they re-download from the marketplace.</li></ul><div class="note">Your settings and keybindings live in <code>settings.json</code>/<code>keybindings.json</code> — not the cache. Clearing caches won't touch them.</div><h2>Sweep it with the rest</h2><p>Editor caches sit alongside the wider dev pile — <a href="node-modules-npm-cache-cleanup.html">node_modules</a>, <a href="docker-orbstack-disk-space-mac.html">Docker</a>, <a href="homebrew-cleanup-mac.html">Homebrew</a>. <a href="../index.html">MacCleaner</a> surfaces them together with real sizes so you reclaim the whole thing at once. Full sweep: <a href="best-mac-cleaner-for-developers-2026.html">the developer guide</a>.</p>
+        <h2>Frequently asked questions</h2>
+        <div class="faq-q"><h3>Is it safe to delete VS Code cache?</h3><p>Yes. Caches, logs and old workspaceStorage regenerate or are stale. Extensions re-download. Your settings.json and keybindings.json are separate and untouched.</p></div><div class="faq-q"><h3>Where does Cursor store its data on a Mac?</h3><p>Like VS Code: ~/Library/Application Support/Cursor (caches, logs, workspace storage) and ~/.cursor/extensions. The same clean-up spots apply.</p></div><div class="faq-q"><h3>How much space do VS Code and Cursor use?</h3><p>With many projects, caches, logs, workspace storage and extensions add up to several gigabytes on an active developer Mac.</p></div>
+        <div class="cta">
+          <h2>Reclaim the space in two taps</h2>
+          <p>MacCleaner scans read-only, shows every file before anything is touched, marks the safe groups, and lets you choose Trash or permanent. Free for up to 500 MB of cleanup a day.</p>
+          <a class="pill" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.13/MacCleaner-0.1.13-universal.dmg">Download for Mac</a>
+        </div>
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul><li><a href="node-modules-npm-cache-cleanup.html">node_modules and npm Cache: Reclaiming Developer Disk Space</a></li><li><a href="best-mac-cleaner-for-developers-2026.html">The Best Mac Cleaner for Developers in 2026</a></li><li><a href="how-to-clear-cache-on-mac.html">How to Clear Cache on a Mac Safely</a></li></ul>
+        </div>
+      </article>
+    </div>
+    <footer class="foot">
+      <div class="wrap foot-row">
+        <span class="corner"><span class="sq"></span> © 2026 MacCleaner</span>
+        <span>Signed &amp; notarized · Universal · <span class="now">No ads · No tracking</span></span>
+      </div>
+    </footer>
+  </body>
+</html>

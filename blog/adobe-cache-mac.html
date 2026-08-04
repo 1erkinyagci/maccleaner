@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clear Adobe Cache (Photoshop, Premiere, Lightroom) on a Mac</title>
+    <meta name="description" content="Adobe apps hoard media caches, previews and temp files — often tens of gigabytes. Here's how to clear them safely and free space on a Mac." />
+    <link rel="canonical" href="https://maccleaner.io/blog/adobe-cache-mac.html" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Clear Adobe Cache (Photoshop, Premiere, Lightroom) on a Mac" />
+    <meta property="og:description" content="Adobe apps hoard media caches, previews and temp files — often tens of gigabytes. Here's how to clear them safely and free space on a Mac." />
+    <meta property="og:url" content="https://maccleaner.io/blog/adobe-cache-mac.html" />
+    <meta property="og:image" content="https://maccleaner.io/blog/img/dev-c.jpg" />
+    <meta property="og:site_name" content="MacCleaner" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Clear Adobe Cache (Photoshop, Premiere, Lightroom) on a Mac" />
+    <meta name="twitter:description" content="Adobe apps hoard media caches, previews and temp files — often tens of gigabytes. Here's how to clear them safely and free space on a Mac." />
+    <meta name="twitter:image" content="https://maccleaner.io/blog/img/dev-c.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../blog.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNNJD0Q0RB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RNNJD0Q0RB");</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Clear Adobe Cache (Photoshop, Premiere, Lightroom) on a Mac", "description": "Adobe apps hoard media caches, previews and temp files — often tens of gigabytes. Here's how to clear them safely and free space on a Mac.", "image": "https://maccleaner.io/blog/img/dev-c.jpg", "datePublished": "2026-08-04", "dateModified": "2026-08-04", "author": {"@type": "Organization", "name": "MacCleaner", "url": "https://maccleaner.io/", "logo": "https://maccleaner.io/logo-mark.png"}, "publisher": {"@type": "Organization", "name": "MacCleaner", "url": "https://maccleaner.io/", "logo": "https://maccleaner.io/logo-mark.png"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://maccleaner.io/blog/adobe-cache-mac.html"}, "inLanguage": "en"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://maccleaner.io/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://maccleaner.io/blog/"}, {"@type": "ListItem", "position": 3, "name": "Clear Adobe Cache (Photoshop, Premiere, Lightroom) on a Mac", "item": "https://maccleaner.io/blog/adobe-cache-mac.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it safe to delete Adobe media cache?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The media cache speeds up playback and is rebuilt from your source media. Use Preferences → Media Cache → Delete Unused. Your projects and originals are untouched."}}, {"@type": "Question", "name": "Where is the Adobe cache stored on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Mostly under ~/Library/Application Support/Adobe and ~/Library/Caches/Adobe — media cache, previews and Camera Raw cache. Clear them from within each app's preferences."}}, {"@type": "Question", "name": "How much space do Adobe apps use?", "acceptedAnswer": {"@type": "Answer", "text": "The caches alone often reach tens of gigabytes on an active creative Mac, all regenerable from your projects."}}]}</script>
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <nav class="nav">
+      <a class="brand" href="../index.html">
+        <img src="../logo-mark.png" alt="MacCleaner logo" width="30" height="30" />
+        <div class="mark">MACCLEANER</div>
+      </a>
+      <div class="nav-center">
+        <a class="nav-link" href="../index.html#how">How it works</a>
+        <a class="nav-link" href="../index.html#clean">What it cleans</a>
+        <a class="nav-link" href="../index.html#pricing">Pricing</a>
+        <a class="nav-link" href="../blog/index.html">Blog</a>
+      </div>
+      <div class="nav-right">
+        <a class="bracket-btn" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.13/MacCleaner-0.1.13-universal.dmg"><span class="br">[</span> Download <span class="br">]</span></a>
+      </div>
+    </nav>
+    <div class="wrap">
+      <article class="article">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> / <a href="index.html">Blog</a> / <span>Clear Adobe Cache (Photoshop, Premiere, Lightroom) on a Mac</span>
+        </nav>
+        <h1>Clear Adobe Cache (Photoshop, Premiere, Lightroom) on a Mac</h1>
+        <p class="byline">MacCleaner · 2026-08-04 · 5 min read</p>
+        <img class="hero-img" src="img/dev-c.jpg" alt="Clear Adobe Cache (Photoshop, Premiere, Lightroom) on a Mac" width="1200" height="675" />
+        <div class="answer">
+          <span class="lbl">Short answer</span>
+          <p>Adobe apps build large caches: Premiere and After Effects media cache, Photoshop scratch and temp files, Lightroom previews and the Camera Raw cache — often tens of gigabytes. All are regenerated from your projects and originals, so they're safe to clear. Clean the Media Cache in Premiere's preferences and clear Lightroom previews and the Camera Raw cache.</p>
+        </div>
+        <h2>Where Adobe hides space</h2><ul><li><strong>Premiere / After Effects:</strong> Media Cache (Preferences → Media Cache) — often the single biggest.</li><li><strong>Photoshop:</strong> scratch disk temp files and Camera Raw cache.</li><li><strong>Lightroom:</strong> previews (<code>.lrdata</code>) and the Camera Raw cache.</li></ul><h2>Clear it safely</h2><ul><li><strong>Premiere/AE:</strong> Preferences → Media Cache → <em>Delete Unused</em> (or clear all).</li><li><strong>Lightroom:</strong> Preferences → Performance → <em>Purge Cache</em>; delete old preview data for catalogs you're not using.</li><li><strong>Photoshop:</strong> Edit → Purge, and clear the Camera Raw cache in preferences.</li></ul><div class="note">Keep your project files, catalogs and original assets — the caches above rebuild from them.</div><h2>The one-scan version</h2><p><a href="../index.html">MacCleaner</a> measures these Adobe caches with real byte counts alongside <a href="final-cut-davinci-cache-mac.html">Final Cut/Resolve</a> and the rest of your big space-users, and clears the safe ones in a couple of taps — recoverable until you empty.</p>
+        <h2>Frequently asked questions</h2>
+        <div class="faq-q"><h3>Is it safe to delete Adobe media cache?</h3><p>Yes. The media cache speeds up playback and is rebuilt from your source media. Use Preferences → Media Cache → Delete Unused. Your projects and originals are untouched.</p></div><div class="faq-q"><h3>Where is the Adobe cache stored on a Mac?</h3><p>Mostly under ~/Library/Application Support/Adobe and ~/Library/Caches/Adobe — media cache, previews and Camera Raw cache. Clear them from within each app's preferences.</p></div><div class="faq-q"><h3>How much space do Adobe apps use?</h3><p>The caches alone often reach tens of gigabytes on an active creative Mac, all regenerable from your projects.</p></div>
+        <div class="cta">
+          <h2>Reclaim the space in two taps</h2>
+          <p>MacCleaner scans read-only, shows every file before anything is touched, marks the safe groups, and lets you choose Trash or permanent. Free for up to 500 MB of cleanup a day.</p>
+          <a class="pill" href="https://github.com/1erkinyagci/maccleaner/releases/download/v0.1.13/MacCleaner-0.1.13-universal.dmg">Download for Mac</a>
+        </div>
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul><li><a href="final-cut-davinci-cache-mac.html">Final Cut & DaVinci Resolve Eating Your Mac's Disk (2026)</a></li><li><a href="how-to-find-large-files-on-mac.html">How to Find and Delete Large Files on a Mac (2026)</a></li><li><a href="how-to-clear-cache-on-mac.html">How to Clear Cache on a Mac Safely</a></li></ul>
+        </div>
+      </article>
+    </div>
+    <footer class="foot">
+      <div class="wrap foot-row">
+        <span class="corner"><span class="sq"></span> © 2026 MacCleaner</span>
+        <span>Signed &amp; notarized · Universal · <span class="now">No ads · No tracking</span></span>
+      </div>
+    </footer>
+  </body>
+</html>
