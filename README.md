@@ -3,7 +3,7 @@
 Marketing/landing site for **MacCleaner**, the trust-first AI storage assistant for Mac.
 Static HTML/CSS (no build step) served from this repo.
 
-Live: https://1erkinyagci.github.io/maccleaner/ · also mirrored on Vercel.
+Live: **https://maccleaner.io** (Vercel, custom domain). The `1erkinyagci.github.io/maccleaner/` mirror still serves the same repo; every page canonicalises to maccleaner.io.
 
 ## What's here
 
